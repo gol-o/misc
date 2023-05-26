@@ -1,0 +1,103 @@
+terminal
+--------
+ctrl+a: move cursor to begin
+ctrl+e: move cursor to end 
+ctrl+b: move cursor back
+ctrl+f: move cursor forward
+ctrl+d: delete symbol
+ctrl+k: deletes from position to end of line
+ctrl+d, backspace: deletes from position to beginning of line
+ctrl+z: suspend
+ctrl+c: interrupt
+ctrl+d: exit
+ctrl+p: history
+ctrl+n: history
+~ path stored in $HOME (absolute)
+. current directory
+$PS1: appearance prompt, PS1='->'
+$TERM: terminal type
+!! double bang: execute last command
+copy: mouse
+
+commands
+--------
+more
+clear: clear screen, short: ctrl+l
+ls -al: show hidden, list and sort name
+ls -alt: show hidden, list and sort by access time descending
+ls -alS: show hidden, list and sort by file size descending and access time descending
+ls -alSr: reverse order
+ls -R: list recusively
+ls -d: only directory entries, no symbolic links, ls -ld .* or -ld .!(|.)
+cat > file: input to file, end with ctrl+d
+cat file -n: numbered
+cat file -e: show linebreak symbol
+wc file: word/new line count
+chmod: change mode, u(ser)=+x(executable) file, 7: all permissions (7=2°+2¹+2²)
+chown: change owner
+chgrp: change group
+diff file1 file2 --color -y: show in columns
+diff file1 file2 --color -u: show unified lines
+mv: move or rename
+cd ~, cd, cd $home: home directory
+tar --create --verbose --file target.tar source1 source2...: tape archiver, verbose: show processed files, short: tar -cvf target.rar sources
+tar --list --file source.tar: show content, short: tar -tf source tar
+tar --extract source.tar, short: tar -xf source.tar
+rm -d dir_name: remove empty directory
+rm -r dir_name: remove non-empty director recursively
+mkdir {dir1, dir2, ...}: make multiple directories
+mkdir top/sub1/sub1.1, ... -p: make multiple subdirectories
+tree
+sudo -i: login as root
+|more, less: like more, line by line
+history: command history
+grep: global regular expression print, ls -a|grep pattern
+mail
+lp
+users
+finger
+login
+passwd
+halt
+reboot
+shutdown
+cal: calendar
+telnet
+ftp
+pr: preview print, pr -num_columns -h "Header" with preview
+lp: line printer
+lpstat: line printer status
+cancel: stops printer job
+sort, -n: numerically, -r: reverse order, +x: ignore x fields (separated by tab, blank or -t 'fieldseparator')
+ps
+ping
+whoami
+whereis
+tty: teletypewriter
+path
+
+profiles
+--------
+$HOME directory: .bash_profil, .bashrc, .profile
+1. edit .bash_profil
+2. source ./.bash_profile or ~/.bash_profile
+
+cvs
+---
+1. mkdir repository_folder
+1. export CVSROOT=$HOME/repository_folder or =~/repository_folder
+2. init repository: cvs init or -d absolute path to repository_folder
+3. cd folder_with_project_to_reposit
+4. cvs import -m "message log" target_directory version label: entire structure in folder_with_project_to_reposit will be imported to repository, target_directory: folder name created after checkout (module name)
+5. cvs checkout target_directory, short cvs co target_directory, -d: ext: external location
+6. cd target_directory
+7. touch f1 f2 f3
+8. add files or directories to repository: cvs add f*
+9. cvs commit -m "message log" f*: commits specific files, cvs co -m "..": commits any change of any files, automatic versioning, committing doesn't delete previous modifications, thus are merged while preserving all changes (conflict indicators need to be removed)
+10. rm target_directory -r
+11. list modules: ls repository_folder
+12. cvs co target_directory or -d absolute path to repository_folder
+13. update local copy: cvs update or up, update on root updates all subdirectories, update from subdirectory only updates at subcontext level, directory renaming is updated (not cvs's module name)
+14. cvs diff file (@file location, else with -d switch)
+15. show logs, versions etc: cvs log, -h: only header, cvs log file: specific file, v: archive
+16. tagging: cvs tag description, tagging all files, e.g. final release
