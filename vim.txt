@@ -1,0 +1,135 @@
+append☆ a, end of line: A
+autocomplete☆ ctrl+p
+buffer☆ circle: ctrl+6, ctrl+w+w (only splitted)
+buffer☆ close all :%bd
+buffer☆ delete :bd, :bd number, :bd! (force)
+buffer☆ wipeout :bw
+buffer☆ list :buffers
+buffer☆ list wildcard :b .c (files with extension .c)
+buffer☆ new: ctrl+w+n or :new
+buffer☆ rotate: ctrl+w+r
+buffer☆ next :bn
+buffer☆ previous :bp
+commandline☆ copy buffer: ctrl+r, "
+commandline☆ copy clipboard: ctrl+r, *
+commandline☆ history previous: ctrl+p, next: ctrl+n
+commandline☆ multiple commands: command1|command2|...
+commandline☆ window command mode: ctrl+f, close: ctrl+c
+copy☆ backwards including start symbol: yvb, forwards: yve
+copy☆ between brackets: yi(
+copy☆ character: yl, or y+space, copy 2 left: y2h
+copy☆ line: Y or yy, 2 lines: yjp or ykp
+copy☆ n times: number, i, input character, esc
+copy☆ paragraphs: yap (copies multiple paragraphs including dividing line), only paragraphs: yip
+copy☆ replace: yiw, viwp
+copy☆ to clipboard: "*y or "+y, one line: "+yy, multiple lines: "+number, yy
+copy☆ word: bye or yiw (current position somewhere in the word)
+delete☆ 2 words: d2w
+delete☆ all between brackets: di( or ci(
+delete☆ all lines: ggdG or :%d
+delete☆ current to begin: db, cb (switch to insert mode)
+delete☆ current to end: de, ce
+delete☆ leading whitespace: dw
+delete☆ line: dd (with line shift), cc (without shift)
+delete☆ n chars: d[n]space or d[n]l
+delete☆ n lines forwards/backwards: number, d, j/k
+delete☆ n lines: number, dd
+delete☆ n lines from current line to linenumber: d linenumber, gg
+delete☆ specific range: number, number d
+delete☆ symbol: x or s, backspace: X or ctrl+h, ctrl+d
+delete☆ to begin of word: db
+delete☆ to beginning of line: d^^, in insert mode: ctrl+u
+delete☆ to end of line: d$ or D, switch to insert mode: c$ or C
+delete☆ until special character: (excluded) dt+char or (included) df+char, ct/cf (switch to insert mode)
+delete☆ word backwards: dve, including first character
+delete☆ word: daw or caw/ciw (change to insert mode), ci{ inside a block, ca{ remove braces too, previous word in insert mode: ctrl+w
+digraph☆ arrow (→): ctrl+k, ->
+digraph☆ arrow (↓): ctrl+k, -v
+digraph☆ bullet (•): ctrl+v, u2022 or ctrl+k, oo
+digraph☆ list digraph symbols :dig
+digraph☆ €: ctrl+k, =e 
+execute☆ !command, silent (execute and close console): silent !command
+explorer☆ :E
+explorer☆ Ntree path
+explorer☆ delete current file: D
+explorer☆ quit :q
+explorer☆ split :Sex
+file☆ ctrl+g
+file☆ current directory :pwd or :cd
+file☆ history: '0, '1, ... or :browse old, q+number
+file☆ open and split :sp filename
+file☆ open under cursor: gf, gF
+help☆ K 
+indent☆ :set shiftwidth=value
+indent☆ disable :set nocindent, :set nosmartindent
+indent☆ fix block: =aB or =a{ (including the braces) or =iB (inside the braces) or =a number B
+indent☆ increase/decrease: >% or <% or =% (cursor on braces) or >iB or <iB (inner block) resp. >B, <B, only current line: <<, >>
+insert☆ after position: p 
+insert☆ at beginning of multiple lines: 0, ctrl+v, select, I, insert char, esc
+insert☆ before position: P
+insert☆ blanks for alignment: blockselection multiple rows V, insert as many blanks for lines less wide to get more space between than source :s/=/ ... =/ or alt+=, columnselection on the source '=', adjust indentation: <<, repetitively: .
+insert☆ i, at beginning of line: I, after current position: a, at ending: A
+insert☆ n empty lines: number, o, esc
+insert☆ new line above/below: o/O
+join☆ multiple lines: J, append at the end: A
+lowercase☆ gu, guiw, gu$
+marks☆ m, letter (set mark) or ', letter (goto mark)
+move☆ back: b, entire word: B, special chars inclusively
+move☆ corresponding {, [, (: %
+move☆ next method: ]] forwards, [[ backwards
+move☆ end of word: e
+move☆ to definition: gd or gD
+move☆ to last position: g;
+move☆ to end of line: $, start of line: 0 or ^^
+move☆ to file: gf
+move☆ to linenumber: number+G or number+gg (also works on relative numbering)
+move☆ to matching braces: %
+move☆ to next/previous line: +/-number+/-
+move☆ to special character: f (forwards), F (backwards) + character
+move☆ to word: w (forwards), W (forward next character), b (backwards), e (end of word)
+next☆ occurance of current symbol: *
+paste☆ p, multiple times: number p  
+paste☆ clipboard: "*p, "+p
+paste☆ insert mode: ctrl+r, " (unnamed register) or * (clipboard)
+paste☆ into command line: ctrl+r, 0 or ctrl+r, + (from clipboard)
+paste☆ line above: P
+paste☆ overwrite selection: P
+quit☆ :x or :wq, :qa (quit all) or ZZ
+recording☆ q, letter, stop: q
+redo☆ ctrl+r
+reformat☆ mark, gq, gq} or =
+reload☆ vimrc: so%
+repeat☆ .
+repeat☆ symbol: number, i, esc
+repeat☆ text: number, i, input text, esc
+repeat☆ textline: number+o/O, input textline, esc
+replace☆ %s/old/new
+replace☆ %s/old/new/gc with confirmation
+replace☆ tab :%s/\t/ /g or :retab
+replace☆ inner content: viwp
+replace☆ overwrite mode: R
+replace☆ r (one letter) or shift+r, selection: vr, input new text
+replace☆ visual selection, c, input new text, esc
+scroll☆ page: ctrl+b/f
+search☆ /pattern, n (goto next), N (goto previous)
+search☆ clear highlights :noh
+search☆ replace: s/abc (current line), %s/abc (all lines), %s/abc/def/g (replace abc with def), %s/a/b/c (with confirmation), %s/\<abc\>/def/g (whole word matching)
+search☆ word :/\<word\>, \< (start), \> (end)
+search☆ word under cursor: * (forwards), # (backwards)
+select☆ block: ctrl+v or ctrl+q, mouse: alt+shift+mouse, vs: alt+shift+↓
+select☆ character: v, entire line: V, multiple rows: [n]v
+select☆ entire document: ggVG
+show☆ colorschemes :colorscheme blank, tab
+show☆ commands :ctrl+d, :first letter, ctrl+d
+show☆ current directory :pwd
+sorting☆ :sort
+split☆ close: ctrl+w, q or o or :on, :only
+split☆ horizontally :sp or ctrl+w+s, vertically :vs or ctrl+w+v
+split☆ move window: ctrl+w, H(left), J(bottom), K(top), L(right)
+split☆ navigate between windows: ctrl+w, j/k/h/l or ctrl+w, arrow or ctrl+w, ctrl+w 
+split☆ resize: ctrl+w, +/- (vertically) or ctrl+w, </> (horizontally) or ctrl+w, = (same size) or ctrl+w, _/| maximum height/width
+split☆ specific buffer :sp #buffer or sp: filename
+swap☆ lines: ddkP
+undo☆ u, insert mode: ctrl+w
+uppercase☆ gU, gUiw, gU$
+window☆ minimize: ctrl+z
