@@ -1,0 +1,7 @@
+set autoindent
+set ignorecase
+set smartcase
+:eclipseaction runprog org.eclipse.debug.ui.commands.RunLast
+imap jj <Esc>
+imap ;; <ESC>;;
+nmap ;; :runprog<Cr>

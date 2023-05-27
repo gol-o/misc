@@ -1,0 +1,6 @@
+imap jj <ESC>
+nmap j gj
+nmap k gk
+imap <C-d> <C-o>x
+imap ;; <ESC>;;
+nmap ;; :vsc Debug.StartWithoutDebugging<CR>
