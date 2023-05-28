@@ -1,0 +1,11 @@
+setting and reading user data
+-----------------------------
+set username: git config --global user.name ... or "..." or '...'
+read username: git config --global user.name
+set email: git config user.email ...
+• autocomplete: tab
+
+staged and comitted
+-------------------
+git status
+git log
