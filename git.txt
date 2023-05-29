@@ -3,7 +3,10 @@ setting and reading user data
 set username: git config --global user.name ... or "..." or '...'
 read username: git config --global user.name
 set email: git config user.email ...
-• autocomplete: tab
+list: git config --list
+configuration: vi ~/.gitconfig
+• autocomplete: tab 
+• different user.name at project level possible
 
 staged and comitted
 -------------------
