@@ -1,8 +1,3 @@
-quittung, beleg, bon
-receipt
-
-
-
 abladen, ablagern
 dump
 
@@ -133,7 +128,7 @@ begeistert
 ecstatic
 
 beilagen
-sides (side orders)
+sides, side orders
 
 bekämpfen
 to combat
@@ -246,7 +241,7 @@ to ail
 dämpfe
 fumes
 
-das ist ein alter hut (die sache ist schon sehr alt)
+das ist ein alter hut
 that's old hat
 
 das war das glück des tüchtigen
@@ -313,7 +308,7 @@ echse
 saurian
 
 eckball
-corner; corner kick
+corner, corner kick
 
 ecke
 corner
@@ -415,7 +410,7 @@ enkel (junge)
 grandson
 
 enkel
-grandchild - grandchildren (plural)
+grandchild - grandchildren
 
 enkelin
 granddaughter
@@ -666,7 +661,7 @@ rooster
 hase
 hare
 
-hauptgang (hauptgericht)
+hauptgang, hauptgericht
 main course
 
 hausmeister
@@ -738,7 +733,7 @@ insulation
 jäger
 hunter/huntsman
 
-jeder hinz und kunz (jeder x-beliebige)
+jeder hinz und kunz
 any tim, dick or harry
 
 jeder topf findet seinen deckel
@@ -1155,6 +1150,9 @@ can we pay on site by invoice or by credit card?
 sie koennen entweder auf rechnung zahlen nach registrierung oder hier per kreditkarte
 you can either pay on site by receipt of your accreditation or on this site by credit card
 
+quittung, beleg, bon
+receipt
+
 reden ist silber, schweigen ist gold
 speech is silver silence is gold
 
@@ -1282,7 +1280,7 @@ seinen lebensunterhalt verdienen
 to earn one's living
 
 seitenlinie
-side line; touch line
+side line, touch line
 
 sekretärin
 secretary
@@ -1312,7 +1310,7 @@ spielfeld
 field, pitch
 
 sport
-physical education (pe)
+physical education
 
 stachelschwein
 porcupine
@@ -1336,7 +1334,7 @@ strafraum
 penalty area
 
 strafstoß
-penalty; penalty kick
+penalty, penalty kick
 
 strauß
 ostrich
@@ -1416,7 +1414,7 @@ scattered showers
 verkatert
 hangover
 
-verkäufer/in
+verkäufer
 shop assistant
 
 verlängerung
