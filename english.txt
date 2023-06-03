@@ -1,14 +1,7 @@
 quittung, beleg, bon
 receipt
 
-rechnung
-bill, invoice
 
-koennen wir vorort auf rechnung zahlen oder per kreditkarte?
-can we pay on site by invoice or by credit card?
-
-sie koennen entweder auf rechnung zahlen nach registrierung oder hier per kreditkarte
-you can either pay on site by receipt of your accreditation or on this site by credit card
 
 abladen, ablagern
 dump
@@ -1154,7 +1147,13 @@ raupe
 caterpillar
 
 rechnung
-bill (be) check (ae)
+bill, check, invoice
+
+koennen wir vorort auf rechnung zahlen oder per kreditkarte?
+can we pay on site by invoice or by credit card?
+
+sie koennen entweder auf rechnung zahlen nach registrierung oder hier per kreditkarte
+you can either pay on site by receipt of your accreditation or on this site by credit card
 
 reden ist silber, schweigen ist gold
 speech is silver silence is gold
@@ -1166,7 +1165,7 @@ reiseleiter
 tour guide
 
 religion
-religious education (re)
+religious education
 
 rentier
 reindeer
@@ -1189,8 +1188,8 @@ dorsal fin
 rüssel
 trunk
 
-sänger/in
-singer; vocalist
+sänger
+singer, vocalist
 
 sanitäter
 paramedic
