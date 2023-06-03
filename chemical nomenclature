@@ -1,0 +1,23 @@
+API
+active pharmaceutical ingredient
+
+CAS
+chemical abstracts service
+
+CAS number
+\d{2-7}-\d{2}-\d
+64-17-5    Ethyl Alcohol
+10043-52-4 Calcium Chloride
+
+ASMF
+active substance master file
+
+EDMF
+european drug master file
+
+USDMF
+us drug master file
+
+CEP
+certificate of suitability (API)
+pharmaceutical manufacturer responsible for CEP's entire lifecycle
