@@ -12,3 +12,10 @@ staged and comitted
 -------------------
 git status
 git log
+
+diff
+----
+git diff
+comparison between edited (unstaged) and staged version
+deletion changes from → a marked by ---
+addition changes from → b marked by +++
