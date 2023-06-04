@@ -124,6 +124,9 @@ to menace
 beefsteak
 meatloaf
 
+begehen, verpflichten, ausführen
+commit
+
 begeistert
 ecstatic
 
@@ -375,6 +378,9 @@ a sharp tongue does not mean that you have a keen mind
 
 eingebildet
 smug
+
+eingliedern
+incorporate
 
 eintagsfliege, strohfeuer
 a flash in the pan
