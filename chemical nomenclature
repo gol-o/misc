@@ -1,3 +1,15 @@
+ACRONYM
+• word formed from the first letters of each of the words in a phrase or name
+
+ABBREVIATION
+• shortened form of a word used in place of the full word
+
+NOMENCLATURE
+• definition, set or system of names or terms
+
+ENAIO
+enterprise all in one
+
 API
 active pharmaceutical ingredient
 
@@ -20,13 +32,16 @@ us drug master file
 
 CEP
 certificate of suitability (API)
-pharmaceutical manufacturer responsible for CEP's entire lifecycle
+• pharmaceutical manufacturer responsible for CEP's entire lifecycle
 
 CTD
 comparative toxicogenomics database
 
 SOP
 standard operating procedure
+
+SMF
+site master file
 
 GMP
 good manufacturing practice
@@ -63,3 +78,31 @@ power user
 
 ESH
 environment safety and health
+
+SME
+small and medium-sized enterprises
+
+QCA
+qualitative comparative analysis
+• uses both quantitative and qualitative analysis
+• requires in-depth knowledge of cases
+
+1. Level MHB
+MHB → master hand book
+SMF → site master file (describes GMP information on production level)
+POL → policy (value and fundamental requirements)
+PRO → process (overall process)
+
+2. Level MHB
+SOP → standard operating procedure
+WEI → advisory, weisung (work or behavioral instructions)
+REG → regulation
+BCP → business continuity plan (risk evaluation)
+
+3. Level Supplements
+F → form
+I → instruction
+L → list
+Q → quiz
+T → translation
+W → worksheet
