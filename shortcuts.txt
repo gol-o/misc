@@ -1,1 +1,3 @@
-
+ctrl+q      mark read
+ctrl+u      mark unread
+shift+f3    toggle capitalization
