@@ -1,5 +1,13 @@
 vocabulary
 ----------
+adherence
+aufrechterhaltung
+
+approve
+genehmigen
+
+abide
+ertragen
 
 postpone
 verschieben, verlegen
