@@ -1362,3 +1362,6 @@ bitte kommen Sie doch herein!: ¡entre, por favor!
 vorwärts: adelante
 los!, auf!, gehen wir!: ¡vamos!
 Wie viel kostet das?: ¿Cuánto cuesta?
+
+Schwyzerdütsch
+Znüni und Zvieri Zwischenmahlzeiten, die vor allem Schulkinder essen. Die Begriffe werden in der Deutschschweiz dabei von den Uhrzeiten abgeleitet, zu denen sie normalerweise gegessen werden. Also das Znüni um neun (schweizerdeutsch „nüün“) Uhr morgens und das Zvieri um vier Uhr nachmittags.
