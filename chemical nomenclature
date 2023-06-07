@@ -16,7 +16,7 @@ active pharmaceutical ingredient
 CAS
 chemical abstracts service
 
-CAS number
+CAS registry number
 \d{2-7}-\d{2}-\d
 64-17-5    Ethyl Alcohol
 10043-52-4 Calcium Chloride
@@ -88,7 +88,7 @@ qualitative comparative analysis
 • requires in-depth knowledge of cases
 
 1. Level MHB
-MHB → master hand book
+MHB → management hand book
 SMF → site master file (describes GMP information on production level)
 POL → policy (value and fundamental requirements)
 PRO → process (overall process)
