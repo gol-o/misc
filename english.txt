@@ -1,7 +1,3 @@
-aufrechterhaltung: adherence
-ertragen: abide
-genehmigen: approve
-verschieben, verlegen: postpone
 abladen, ablagern: dump
 abpfiff: (final) whistle
 abschirmen von: to screen from
@@ -9,7 +5,6 @@ abseits: offside
 abwärme: waste heat
 abwasser: sewage
 affen machen alles nach: monkey see, monkey do
-agressiv: aggressive
 allein lebende frau: spinster
 alter schützt vor torheit nicht: there's no fool like an old fool
 altpapier: waste paper
@@ -26,13 +21,13 @@ arbeitslosenuntersützung: unemployment benefit, dole money
 artenvielfalt: biodiversity
 auf dem holzweg sein: barking up the wrong tree
 auf etwas einwirken: to affect
+aufrechterhaltung: adherence
 aus den augen, aus dem sinn: out of sight, out of mind
 ausgesetzt sein: to be exposed to
 ausgestorben: extinct
 auspuffgase: exhaust fumes
 ausstoßen: to emit
 austrocknen: to dry up
-vertrocknen: to parch
 auswechselspieler: substitute
 azubi, lehrling: apprentice, trainee
 bandwurm: tapeworm
@@ -51,7 +46,6 @@ bekümmert: grieving
 belasten: to load
 bellende hunde beißen nicht: barking dogs never bite
 bergarbeiter: miner
-beruf: job
 beruf (studiert): profession
 beruf, handwerk: trade
 beschädigen: to harm
@@ -81,22 +75,22 @@ dachs: badger
 dackel: dachshund
 dahinsiechend, kränkeln: to ail
 dämpfe: fumes
-das ist ein alter hut: that's old hat
-das war das glück des tüchtigen: he deserved the break
-der apfel fällt nicht weit vom stamm: like father like son
-der krug geht so lange zum wasser, bis er bricht: the last straw that breaks the camels back
-der lauscher an der wand hört seine eigne schand': listeners hear no good of themselves
-der mohr hat seine schuldigkeit getan: once one has served one's purpose one is simply discarded
-der zweck heiligt die mittel: the end justifies the means
+alter hut: that's old hat
+das glück des tüchtigen: he deserved the break
+apfel fällt nicht weit vom stamm: like father like son
+krug geht so lange zum wasser, bis er bricht: the last straw that breaks the camels back
+lauscher an der wand hört seine eigne schand': listeners hear no good of themselves
+mohr hat seine schuldigkeit getan: once one has served one's purpose one is simply discarded
+zweck heiligt die mittel: the end justifies the means
 des einen freud des anderen leid: one man's meat is another man's poison
 diamantklapperschlange: diamondback rattlesnake
-die liebe wächst mit der entfernung: absence makes the heart grow fonder
-die ratten verlassen das sinkende schiff: rats desert the sinking ship
-die tat wirkt mächtiger als das wort: actions speak louder than words
+liebe wächst mit der entfernung: absence makes the heart grow fonder
+ratten verlassen das sinkende schiff: rats desert the sinking ship
+tat wirkt mächtiger als das wort: actions speak louder than words
 drohen: to threaten
-du sollst dein licht nicht unter den scheffel stellen: never spread yourself too thin
-dumm: silly
+dein licht nicht unter den scheffel stellen: never spread yourself too thin
 dumm wie bohnenstroh: as thick as a brick
+dumm: silly
 dumme haben immer glück: fortune favours fools
 düngemittel: fertilizer
 dunst: mist
@@ -112,19 +106,19 @@ eidechse: lizard
 eifersüchtig sein: to be jealous of sb
 eigenlob stinkt: to blow one's own trumpet
 eile mit weile: more haste less speed
-ein bild sagt mehr als tausend worte: a picture is worth a thousand words
-ein gebranntes kind scheut das feuer: once bitten twice shy
-ein schlechter handwerker schimpft immer auf sein werkzeug: a bad workman always blames his tools
-ein spatz in der hand ist besser als die taube auf dem dach: a bird in the hand is worth two in the bush
-ein unglück kommt selten allein: it never rains but it pours
-ein unrecht hebt das andere nicht auf: two wrongs don't make it right
+bild sagt mehr als tausend worte: a picture is worth a thousand words
+gebranntes kind scheut das feuer: once bitten twice shy
+schlechter handwerker schimpft immer auf sein werkzeug: a bad workman always blames his tools
+spatz in der hand ist besser als die taube auf dem dach: a bird in the hand is worth two in the bush
+unglück kommt selten allein: it never rains but it pours
+unrecht hebt das andere nicht auf: two wrongs don't make it right
 eindeutigkeit: uniqueness
-eine feste stelle haben: a regular job
-eine firma leiten: to run a firm
-eine hand wäscht die andere: one good turn deserves another
-eine lohnerhöhung bekommen: to get a raise, rise
-eine schwalbe macht noch keinen sommer: one swallow doesn't make a summer
-eine spitze zunge macht noch keinen scharfen verstand: a sharp tongue does not mean that you have a keen mind
+feste stelle haben: a regular job
+firma leiten: to run a firm
+hand wäscht die andere: one good turn deserves another
+lohnerhöhung bekommen: to get a raise, rise
+schwalbe macht noch keinen sommer: one swallow doesn't make a summer
+spitze zunge macht noch keinen scharfen verstand: a sharp tongue does not mean that you have a keen mind
 eingebildet: smug
 eingliedern: incorporate
 einhaltung: compliance
@@ -138,8 +132,8 @@ empfehlung des tages: today's special
 ende gut, alles gut: all's well that ends well
 energieeinsparung: energy conservation
 energiesparend: energy-efficient
-enkel: grandchild - grandchildren
 enkel (junge): grandson
+enkel: grandchild - grandchildren
 enkelin: granddaughter
 entsetzt: horrified
 enttäuscht: disappointed
@@ -151,7 +145,9 @@ erhaltung,: preservation
 erneuerbar: renewable
 ernst: serious
 erschöpft: exhausted
+ertragen: abide
 erwachsener: adult
+erwartungen gerecht werden: live up to your expectations
 erziehen: to bring up
 erzürnt: enraged
 es gehören immer zwei dazu: it takes two to tango
@@ -200,6 +196,7 @@ geld allein macht nicht glücklich: money isn't everything
 gelegenheit macht diebe: opportunity makes thieves
 gelegentliche aufheiterungen: sunny intervals
 gemein: nasty
+genehmigen: approve
 genehmigung: permission
 gequält: agonized
 gerechtigkeit geschieht nicht, ohne dass sich jemand beklagt: justice was never done but someone complained
@@ -245,9 +242,9 @@ isolierung (material): insulation
 jäger: hunter, huntsman
 jeder hinz und kunz: any tim, dick or harry
 jeder topf findet seinen deckel: every jack will find his jill
-jemanden auf den arm nehmen: to pull someone's leg
-jemanden kündigen: to dismiss somebody, to give somebody notice
-jemanden rausschmeißen: to fire somebody
+auf den arm nehmen: to pull someone's leg
+kündigen: to dismiss somebody, to give somebody notice
+rausschmeißen: to fire somebody
 junggeselle: bachelor
 käfer: beetle
 kakerlake: cockroach
@@ -475,8 +472,10 @@ verlobte: fiancée
 verlobter: fiancé
 vermittelnd: meditative
 vernünftig: sensible
+verschieben, verlegen: postpone
 versichern: assure
 verteidiger: back, fullback
+vertrocknen: to parch
 verwandter: relative, relation
 viel bürokratie: lots of red tape
 voller bauch studiert nicht gern: you can't study on a full stomach
@@ -488,8 +487,8 @@ vorfahr: ancestor
 vormund: guardian
 vorsicht ist besser als nachsicht: better safe than sorry
 vorsichtig: careful, cautious
-vorspeisen: hors d'oeuvres, starters
 vorspeisen (kalt/warm): appetizers (cold/hot)
+vorspeisen: hors d'oeuvres, starters
 wahnsinnig: mad
 waise: orphan
 was der bauer nicht kennt, das frisst er nicht: you can't change the habits of a lifetime
