@@ -10,8 +10,8 @@ buffer☆ new: ctrl+w+n or :new
 buffer☆ rotate: ctrl+w+r
 buffer☆ next :bn
 buffer☆ previous :bp
-commandline☆ copy buffer: ctrl+r, "
-commandline☆ copy clipboard: ctrl+r, *
+commandline☆ insert buffer: ctrl+r, "
+commandline☆ insert clipboard: ctrl+r, *
 commandline☆ history previous: ctrl+p, next: ctrl+n
 commandline☆ multiple commands: command1|command2|...
 commandline☆ window command mode: ctrl+f, close: ctrl+c
