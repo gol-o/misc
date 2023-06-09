@@ -1,0 +1,1 @@
+kill remote sessions    taskkill /im mstsc* /f
