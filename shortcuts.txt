@@ -1,5 +1,9 @@
 outlook
 -------
-ctrl+q      mark read
-ctrl+u      mark unread
-shift+f3    toggle capitalization
+ctrl+q            mark read
+ctrl+u            mark unread
+shift+f3          toggle capitalization
+
+win
+---
+ctrl+shift+esc    taskmanager
