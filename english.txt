@@ -474,6 +474,7 @@ vermittelnd: meditative
 vernünftig: sensible
 verschieben, verlegen: postpone
 versichern: assure
+versorgen: provision
 verteidiger: back, fullback
 vertrocknen: to parch
 verwandter: relative, relation
