@@ -1,1 +1,82 @@
+ACRONYM
+word formed from the first letters of each of the words in a phrase or name
 
+ABBREVIATION
+shortened form of a word used in place of the full word
+
+NOMENCLATURE
+definition, set or system of names or terms
+
+GLOSSARY
+alphabetical list of terms with the definitions
+
+CSV
+comuterized system validation
+
+ITIL
+information technology infrastructre library
+
+IQ/OQ/PQ
+installation qualification / operational qualification / performance qualification
+
+ECM
+enterprice content management
+
+DMS
+document management system
+
+ISO/OSI
+Please Do Not Throw Salami Pizza Away
+• 7 abstraction layers
+[8. user/political, ghost in the machine]
+7. application
+6. presentation
+5. session
+4. transport
+3. network
+2. data link
+1. physical
+
+MICROSERVICE
+• cloud-native architectural approach
+• single application is composed of many loosely coupled and independently deployable smaller components/services
+• communication based on
+  • rest api
+  • event streaming
+  • message broking
+• code can be updated more easily, new features without touching the entire application
+• components can be scaled independently of one another
+
+REST API
+representational state transfer
+• mechanism that enables an application/service to access a resource within another application/service
+• requirements/architectural constraints
+  1. uniform interface
+    • only 1 uniform resource identifier
+  2. client-server decoupling
+    • no interaction but by uri
+    • only http based data transfer
+  3. statelessness
+    • each request includes all the information necessary
+    • no server-side sessions
+    • server aren’t allowed to store any data related to a client request
+  4. cacheability
+    • improved performance on the client side
+    • increasing scalability on the server side
+  5. layered system architecture
+    • calls and responses go through different layers
+    • number of different intermediaries in the communication loop
+  6. code on demand
+    • usually send static resources
+    • can contain executable code (applets)
+    
+SOAP
+simple object access protocol
+• messaging protocol specification for exchanging structured information
+• xml based message format via http
+
+XML-RPC
+extensible markup language remote procedure call
+
+BACKLOG
+prioritized list of functionality which a product should contain
