@@ -85,3 +85,6 @@ extensible markup language remote procedure call
 
 BACKLOG
 prioritized list of functionality which a product should contain
+
+MIME
+multipurpose internet mail extensions
