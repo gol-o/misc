@@ -1,60 +1,40 @@
-erdelivery note lieferschein
-hello, may i briefly introduce myself darf ich mich kurz vorstellen
-pile haufen
-order, job auftrag
-order confirmation
-revert rueckgaengig machen
-composing of
-reveal aufdecken, offenbaren, aufdecken
-as you want wie du willst
-i need to speak to my developers
-condemed verurteilt
-in the meantime zwischendurch
-overview ueberblick
-oversight aufsicht
-spare part einzelteil
-spare part list ersatzteilliste
-due to the time
-facilitate further
-we have to have the time
-frankly speaking ehrlich gesagt
-roughly grob
-struggle with
-adorable
-euphoric
-getting forward
-is coverable
-properties
-
 abladen, ablagern: dump
 abpfiff: (final) whistle
 abschirmen von: to screen from
 abseits: offside
-abwärme: waste heat
+abwaerme: waste heat
 abwasser: sewage
 affen machen alles nach: monkey see, monkey do
 allein lebende frau: spinster
-alter schützt vor torheit nicht: there's no fool like an old fool
+alter hut: that's old hat
+alter schuetzt vor torheit nicht: there's no fool like an old fool
 altpapier: waste paper
 am schlimmsten betroffen sein: hardest hit
 angeekelt: disgusted
 anpfiff: whistle
-anstoß: kick-off
-anstoßpunkt: centre spot
+anstoss: kick-off
+anstosspunkt: centre spot
+apfel faellt nicht weit vom stamm: like father like son
 apotheker: chemist
 arbeitgeber: employer
 arbeitsbelastung: work load
 arbeitslos sein: to be out of work, to be unemployed
-arbeitslosenuntersützung: unemployment benefit, dole money
+arbeitslosenuntersuetzung: unemployment benefit, dole money
 artenvielfalt: biodiversity
 auf dem holzweg sein: barking up the wrong tree
+auf den arm nehmen: to pull someone's leg
 auf etwas einwirken: to affect
+aufdecken, offenbaren: reveal
+aufgrund der Zeit: due to the time
 aufrechterhaltung: adherence
+aufsicht: oversight
+auftrag: order, job
+auftragsbestaetigung: order confirmation
 aus den augen, aus dem sinn: out of sight, out of mind
 ausgesetzt sein: to be exposed to
 ausgestorben: extinct
 auspuffgase: exhaust fumes
-ausstoßen: to emit
+ausstossen: to emit
 austrocknen: to dry up
 auswechselspieler: substitute
 azubi, lehrling: apprentice, trainee
@@ -66,96 +46,79 @@ bearbeiten: handling, process, work on
 bedienung inklusive: service included
 bedrohen: to menace
 beefsteak: meatloaf
-begehen, verpflichten, ausführen: commit
+begehen, verpflichten, ausfuehren: commit
 begeistert: ecstatic
 beilagen: sides, side orders
-bekämpfen: to combat
-bekümmert: grieving
+bekaempfen: to combat
+bekuemmert: grieving
 belasten: to load
-bellende hunde beißen nicht: barking dogs never bite
+bellende hunde beissen nicht: barking dogs never bite
 bergarbeiter: miner
 beruf (studiert): profession
 beruf, handwerk: trade
-beschädigen: to harm
-beschäftigung (auch in freizeit): occupation
+beschaedigen: to harm
+beschaeftigung (auch in freizeit): occupation
 beseitigung, entsorgung: disposal
-besser spät als garnicht: better late than never
+besser spaet als garnicht: better late than never
 bestattungsunternehmer: undertaker
-bestürzt: upset
+bestuerzt: upset
 bewahrung: preservation
 bewerbung: application
 bewerbungsformular: application form
 bewusst: to be aware
 biber: beaver
+bild sagt mehr als tausend worte: a picture is worth a thousand words
 biologisch abbaubar: biodegradable
 blattlaus: aphid
 bleifrei: unleaded
 blindschleiche: blindworm
-blöd: stupid
+bloed: stupid
 blutegel: leech
 boden: soil
 boshaft: mischievous
+braeutigam: groom
 braut: bride
-bräutigam: groom
 chirurg: surgeon
 dachdecker: roofer, slater (schiefer), tiler (ziegeln, schindeln)
 dachs: badger
 dackel: dachshund
-dahinsiechend, kränkeln: to ail
-dämpfe: fumes
-alter hut: that's old hat
-das glück des tüchtigen: he deserved the break
-apfel fällt nicht weit vom stamm: like father like son
-krug geht so lange zum wasser, bis er bricht: the last straw that breaks the camels back
-lauscher an der wand hört seine eigne schand': listeners hear no good of themselves
-mohr hat seine schuldigkeit getan: once one has served one's purpose one is simply discarded
-zweck heiligt die mittel: the end justifies the means
+daempfe: fumes
+dahinsiechend, kraenkeln: to ail
+darf ich mich kurz vorstellen?: hello, may i briefly introduce myself?
+das glueck des tuechtigen: he deserved the break
+dein licht nicht unter den scheffel stellen: never spread yourself too thin
 des einen freud des anderen leid: one man's meat is another man's poison
 diamantklapperschlange: diamondback rattlesnake
-liebe wächst mit der entfernung: absence makes the heart grow fonder
-ratten verlassen das sinkende schiff: rats desert the sinking ship
-tat wirkt mächtiger als das wort: actions speak louder than words
 drohen: to threaten
-dein licht nicht unter den scheffel stellen: never spread yourself too thin
+duengemittel: fertilizer
+duerre: drought
 dumm wie bohnenstroh: as thick as a brick
 dumm: silly
-dumme haben immer glück: fortune favours fools
-düngemittel: fertilizer
+dumme haben immer glueck: fortune favours fools
 dunst: mist
 durchsickern: to leak
-dürre: drought
 echse: saurian
 eckball: corner, corner kick
 ecke: corner
 eckkreis: corner arc
-ehrlich währt am längsten: honesty is the best policy
-eichhörnchen: squirrel
+ehrlich gesagt: frankly speaking
+ehrlich waehrt am laengsten: honesty is the best policy
+eichhoernchen: squirrel
 eidechse: lizard
-eifersüchtig sein: to be jealous of sb
+eifersuechtig sein: to be jealous of sb
 eigenlob stinkt: to blow one's own trumpet
 eile mit weile: more haste less speed
-bild sagt mehr als tausend worte: a picture is worth a thousand words
-gebranntes kind scheut das feuer: once bitten twice shy
-schlechter handwerker schimpft immer auf sein werkzeug: a bad workman always blames his tools
-spatz in der hand ist besser als die taube auf dem dach: a bird in the hand is worth two in the bush
-unglück kommt selten allein: it never rains but it pours
-unrecht hebt das andere nicht auf: two wrongs don't make it right
 eindeutigkeit: uniqueness
-feste stelle haben: a regular job
-firma leiten: to run a firm
-hand wäscht die andere: one good turn deserves another
-lohnerhöhung bekommen: to get a raise, rise
-schwalbe macht noch keinen sommer: one swallow doesn't make a summer
-spitze zunge macht noch keinen scharfen verstand: a sharp tongue does not mean that you have a keen mind
 eingebildet: smug
 eingliedern: incorporate
 einhaltung: compliance
 eintagsfliege, strohfeuer: a flash in the pan
 einwurf: throw-in
+einzelteil: spare part
 elch: moose (ae)
 elend: miserable
 elfmeterpunkt: penalty spot
-elfmeterschießen: penalty shoot-out
+elfmeterschiessen: penalty shoot-out
 empfehlung des tages: today's special
 ende gut, alles gut: all's well that ends well
 energieeinsparung: energy conservation
@@ -164,33 +127,36 @@ enkel (junge): grandson
 enkel: grandchild - grandchildren
 enkelin: granddaughter
 entsetzt: horrified
-enttäuscht: disappointed
-er entschied sich für den kellnerberuf: he took a job as a waiter
+enttaeuscht: disappointed
+er entschied sich fuer den kellnerberuf: he took a job as a waiter
 er hat die rechnung ohne den wirt gemacht: he had reckoned without his host
-erdwärme: geothermal
+erdwaerme: geothermal
 erfreut: to be pleased
 erhaltung,: preservation
 erneuerbar: renewable
 ernst: serious
-erschöpft: exhausted
+ersatzteilliste: spare part list
+erschoepft: exhausted
 ertragen: abide
 erwachsener: adult
 erwartungen gerecht werden: live up to your expectations
 erziehen: to bring up
-erzürnt: enraged
-es gehören immer zwei dazu: it takes two to tango
-es ist nicht alles gold was glänzt: all that glitters is not gold, beauty is only skin deep
-es regnet wie aus kübeln: it's raining cats and dogs
+erzuernt: enraged
+es gehoeren immer zwei dazu: it takes two to tango
+es ist nicht alles gold was glaenzt: all that glitters is not gold, beauty is only skin deep
+es regnet wie aus kuebeln: it's raining cats and dogs
 eule: owl
 eulen anch athen tragen: to carry coals to newcastle
 facharbeiter: skilled worker
+faellen: to chop down
 falke: falcon
-fällen: to chop down
 fehler sind der bester lehrer: mistakes are often the best teachers
 feldhase: hare
 fell: coat, fur
 fernfahrer: truck driver
+feste stelle haben: a regular job
 fink: finch
+firma leiten: to run a firm
 fisch und pommes: fish and chips
 fischdampfer: trawler
 fledermaus: bat
@@ -199,58 +165,62 @@ fliesenleger: tiler
 floh: flea
 forelle: trout
 forscher: explorer (entdecker), research scientist
-frau (gnädige frau): madam
+frau (gnaedige frau): madam
 freie stelle: vacancy
-freistoß: free kick
+freistoss: free kick
 fressen oder gefressen werde: do lunch or be lunch
 freudig: joyful
 freunde in der not gehen tausend auf ein lot: a friend in need is a friend indeed
 freundlich: pleasant
-frisch, kühl: chilly
-friseur: barber (männer), hairdresser, hairstylist
+frisch, kuehl: chilly
+friseur: barber (maenner), hairdresser, hairstylist
 froh: glad
 frosch: frog
 froschlaich: frogspawn
 fruchtbar: fertile
-fürchte nicht, was du nicht vermeiden kannst: it is foolish to fear that which you cannot avoid
+fuerchte nicht, was du nicht vermeiden kannst: it is foolish to fear that which you cannot avoid
+gaertner: gardener
 garnele: prawn, shrimp
-gärtner: gardener
 gebackene kartoffel: jacket/baked potato
-gefährdet, vom aussterben bedroht: endangered
+gebranntes kind scheut das feuer: once bitten twice shy
+gefaehrdet, vom aussterben bedroht: endangered
 gefieder: coat
 geier: vulture
 gelangweilt: bored
-geld allein macht nicht glücklich: money isn't everything
+geld allein macht nicht gluecklich: money isn't everything
 gelegenheit macht diebe: opportunity makes thieves
 gelegentliche aufheiterungen: sunny intervals
 gemein: nasty
 genehmigen: approve
 genehmigung: permission
-gequält: agonized
+gequaelt: agonized
 gerechtigkeit geschieht nicht, ohne dass sich jemand beklagt: justice was never done but someone complained
-getränke: beverages
+getraenke: beverages
 gezeiten: tide
-giftmüll: toxic waste
-giftmülldeponie: toxic waste dump
+giftmuell: toxic waste
+giftmuelldeponie: toxic waste dump
 giftschlange: poisonous, venomous snake
 gleich und gleich gesellt sich gern: misery loves company
 gleichgewicht: balance
-gleichgültig: indifferent
+gleichgueltig: indifferent
 gleitzeit: flexitime
 grafiker: graphic artist, designer
-grasshüpfer: grasshopper
-gürteltier: armadillo
+grasshuepfer: grasshopper
+grob: roughly
+guerteltier: armadillo
 habicht: hawk
 hahn: rooster
+hand waescht die andere: one good turn deserves another
 hase: hare
+haufen: pile
 hauptgang, hauptgericht: main course
 hausmeister: caretaker
 hauswirtschaft: home economics
 hecht: pike
 heilbutt: halibut
 herr: sir, gentleman
-hier möchte ich nicht begraben sein: i wouldn't live in that dump if you paid me!
-hilfsmaßnahme: remedial action
+hier moechte ich nicht begraben sein: i wouldn't live in that dump if you paid me!
+hilfsmassnahme: remedial action
 hirsche: deer, hart
 hochmut kommt vor dem fall: pride comes before the fall
 hochzeit: wedding
@@ -265,35 +235,32 @@ in der not frisst der teufel fliegen: beggars cannot be choosers
 in schichten arbeiten: to work in shifts
 industrieabfall: industrial waste
 informationen zu den themen geben, bei denen ich eingebunden bin: information on the subjects I am involved with
-ins fettnäpfchen treten: to drop a brick
+ins fettnaepfchen treten: to drop a brick
 isolierung (material): insulation
-jäger: hunter, huntsman
+jaeger: hunter, huntsman
 jeder hinz und kunz: any tim, dick or harry
 jeder topf findet seinen deckel: every jack will find his jill
-auf den arm nehmen: to pull someone's leg
-kündigen: to dismiss somebody, to give somebody notice
-rausschmeißen: to fire somebody
 junggeselle: bachelor
-käfer: beetle
+kaefer: beetle
 kakerlake: cockroach
 kalbfeisch: veal
 kamm: crest
 kanarienvogel: canary
 karpfen: carp
-kartoffelpüree: mashed potatoes
+kartoffelpueree: mashed potatoes
 katalysator: catalytic converter
-katz aus dem haus, rührt sich die maus: when the cat's away the mice will play
+katz aus dem haus, ruehrt sich die maus: when the cat's away the mice will play
 kaulquappe: tadpole
 keine nachricht ist eine gute nachricht: no news is good news
 kellner/in: waiter/waitress
-kindergärtnerin: nursery-school teacher
+kindergaertnerin: nursery-school teacher
 kinderpfleger: childcare assistant
+klaeranlage: sewage plant
+klaerschlamm: sludge
 klapperschlange: sidewinder
-kläranlage: sewage plant
-klärschlamm: sludge
 kleiber: nuthatch
 kleider machen leute: fine feathers make fine birds
-kleine/große portion: small/large plate
+kleine/grosse portion: small/large plate
 kleiner bruder: baby brother
 klempner: plumber
 knapp vorbei ist auch daneben: a miss is as good as a mile, close but no cigar
@@ -303,20 +270,23 @@ kopfball: header
 kosmetikerin: beautician, cosmetician, make-up artist
 kotelett: chop
 krabbe: crab
+kraehe: crow
 kraftwerk: power station
-krähe: crow
 kralle: claw
-kröte: toad
-kühlmittel: cooling agent
-küken: biddy
-kümmer dich um deinen kram: mind your own business
+kroete: toad
+krug geht so lange zum wasser, bis er bricht: the last straw that breaks the camels back
+kuehlmittel: cooling agent
+kueken: biddy
+kuemmer dich um deinen kram: mind your own business
+kuendigen: to dismiss somebody, to give somebody notice
+kuendigungsfrist: period of notice
+kuestengewaesser: coastal waters
 kundenberater: customer adviser
-kündigungsfrist: period of notice
-küstengewässer: coastal waters
 lachender hans: kookaburra
 lachs: salmon
 lamm: lamb
 laus: louse (pl lice)
+lauscher an der wand hoert seine eigne schand': listeners hear no good of themselves
 lebenslauf: cv (curriculum vitae)
 leber: liver
 lebewesen: creature
@@ -325,51 +295,55 @@ lehrstelle, lehrzeit: apprenticeship
 lesbar: legible
 libelle: dragonfly
 libero, vorstopper: sweeper
+liebe waechst mit der entfernung: absence makes the heart grow fonder
 liebeskummer: lovesick
-liköre: liqueurs (ae)
+lieferschein: delivery note
+likoere: liqueurs (ae)
 linienrichter: linesman
 lobe den tag nicht vor dem abend: don't count your chicken before they are hatched
+loesungsmittel: solvent
 lohn: wages
+lohnerhoehung bekommen: to get a raise, rise
 lohnforderung: wage demand, claim
 lohnfortzahlung: continued payment of wages
 lohngruppe: wage group
-lohnkürzung: wage cut
+lohnkuerzung: wage cut
 lohnzettel: pay slip
-lösungsmittel: solvent
-lügen haben kurze beine: lies don't travel far, lies have short legs
+luegen haben kurze beine: lies don't travel far, lies have short legs
 made: maggot
 maler: painter
-man erntet das, was man säet: what goes around comes around
-man weiß erst, was man hatte, wenn man es verloren hat: you don't know the value of water before the well runs dry
-marienkäfer: ladybug
+man erntet das, was man saet: what goes around comes around
+man weiss erst, was man hatte, wenn man es verloren hat: you don't know the value of water before the well runs dry
+marienkaefer: ladybug
 mauersegler: swift
 maul: muzzle, stout
 maultier: mule
 maulwurf: mole
 maurer: bricklayer, brickie
 mechaniker: mechanic
-meeresfrüchte: seafruit
+meeresfruechte: seafruit
 meerschweinchen: guinea pig
 mehrwertsteuer: vat (value-added tax)
 meise: tit
 menschen, die im glashaus sitzen, sollen nicht mit steinen werfen: people who live in glass houses should not throw stones
-mißtrauisch: suspicious
+misstrauisch: suspicious
 mittelfeldspieler: midfielder
 modedesigner: fashion designer
+moewe: gull
+mohr hat seine schuldigkeit getan: once one has served one's purpose one is simply discarded
 mojave klapperschlange: mojave rattlesnake
 mokassinschlange: copperhead
 morgenstund hat gold im mund: the early bird catches the worm
 motte: moth
-möwe: gull
-mücke: midge
+muecke: midge
 mungo: mongoose
 muschel: shell
 mutig: brave
 nachkomme: descendant
 nachspeisen: desserts
-nächstenliebe beginnt zu hause: charity begins at home
 nachtigall: nightingale
 nacktschnecke: slug
+naechstenliebe beginnt zu hause: charity begins at home
 nashorn: rhinoceros
 neffe: nephew
 nerz: mink
@@ -379,13 +353,14 @@ neugierig: curious
 nicht alle tassen im schrank haben: few sandwiches short of a picnic
 nichte: niece
 nichts dauert ewig: all good things come to an end
+niedlich: adorable
 not macht erfinderisch: necessity is the mother of invention
 nudelgerichte: pasta
 ochse: bullock
-offene weine (weiß, rosé, rot): wines by the glass (white, blush, red)
-ohne fleiß kein preis: no pains - no gains
+offene weine (weiss, rosé, rot): wines by the glass (white, blush, red)
+ohne fleiss kein preis: no pains - no gains
 paar: couple
-panzer (schildkröte): shell
+panzer (schildkroete): shell
 papagei: parrot
 pastete: pie
 patenkind: godchild
@@ -400,8 +375,10 @@ pfote: paw
 pommes frittes: chips (be), french fries (ae)
 qualle: jellyfish
 quittung, beleg, bon: receipt
-rache ist süß: payback is a bitch
+rache ist suess: payback is a bitch
+ratten verlassen das sinkende schiff: rats desert the sinking ship
 raupe: caterpillar
+rausschmeissen: to fire somebody
 rechnung: bill, check, invoice
 reden ist silber, schweigen ist gold: speech is silver silence is gold
 reh: deer
@@ -412,17 +389,19 @@ rindfleisch: beef
 robbe: seal
 rochen: ray
 rotkehlchen: robin
-rückenflosse: dorsal fin
-rüssel: trunk
-sänger: singer, vocalist
-sanitäter: paramedic
+rueckenflosse: dorsal fin
+rueckgaengig machen: revert
+ruessel: trunk
+saenger: singer, vocalist
+sanitaeter: paramedic
 schalentier (krebse): shell fish
 schaumweine, sekt: sparkling wine
-scherben bringen glück: broken crockery brings you luck
+scherben bringen glueck: broken crockery brings you luck
 schiedsrichter: referee
-schildkröte: tortoise, turtle
+schildkroete: tortoise, turtle
 schinken: ham
-schmiede das eisen solange es heiß ist: strike while the iron is hot
+schlechter handwerker schimpft immer auf sein werkzeug: a bad workman always blames his tools
+schmiede das eisen solange es heiss ist: strike while the iron is hot
 schnabel: beak
 schnauze: muzzle
 schneesturm: blizzard
@@ -431,6 +410,7 @@ schottischer whisky: single malt scotch (whisky)
 schrecklich: awful, terrible
 schuldig: guilty
 schuppen: scales
+schwalbe macht noch keinen sommer: one swallow doesn't make a summer
 schwalbe: swallow
 schwanz: tail
 schwein: pig, hog
@@ -445,29 +425,33 @@ seestern: starfish
 seidenraupe: silkworm
 seinen lebensunterhalt verdienen: to earn one's living
 seitenlinie: side line, touch line
-sekretärin: secretary
-selbst kündigen: to quit, to resign
+sekretaerin: secretary
+selbst kuendigen: to quit, to resign
 sie koennen entweder auf rechnung zahlen nach registrierung oder hier per kreditkarte: you can either pay on site by receipt of your accreditation or on this site by credit card
 sonniger wetterabschnitt: sunny spell
-sparsam im kleinen, aber im großen verschwenderisch: penny wise, pound foolish
+sparsam im kleinen, aber im grossen verschwenderisch: penny wise, pound foolish
+spatz in der hand ist besser als die taube auf dem dach: a bird in the hand is worth two in the bush
 spatz: sparrow
 specht: woodpecker
 spiel: match
 spielfeld: field, pitch
+spitze zunge macht noch keinen scharfen verstand: a sharp tongue does not mean that you have a keen mind
 sport: physical education
 stachelschwein: porcupine
 stechfliege: gadfly
-steter tropfen höhlt den stein: dripping hollows out rock
+steter tropfen hoehlt den stein: dripping hollows out rock
 stiefbruder: stepbrother
 stille wasser sind tief: still waters run deep
 storch: stork
 strafraum: penalty area
-strafstoß: penalty, penalty kick
-strauß: ostrich
+strafstoss: penalty, penalty kick
+strauss: ostrich
+struggle with
+tat wirkt maechtiger als das wort: actions speak louder than words
 taube: dove, pigeon
 tauen: thaw
 tausch ist kein raub: fair exchange is no robbery
-tausendfüßler: millipede
+tausendfuessler: millipede
 taxifahrer: taxi, cab driver
 teilzeit: a part-time job
 tintenfisch: squid
@@ -475,38 +459,42 @@ tischler: carpenter
 trinkgeld: tip
 trockenheit: drought
 trockenzeit: dry season
-über geschmack lässt sich streiten: beauty is in the eye of the beholder
-überglücklich: blissful
-überrascht: surprised
-überstunden machen: to work overtime
-übertreffen: excel
-übung macht den meister: practice makes perfect
-um den heißen brei herumreden: to beat about, around the bush
+ueber geschmack laesst sich streiten: beauty is in the eye of the beholder
+ueberblick: overview
+uebergluecklich: blissful
+ueberrascht: surprised
+ueberstunden machen: to work overtime
+uebertreffen: excel
+uebung macht den meister: practice makes perfect
+um den heissen brei herumreden: to beat about, around the bush
 um gottes willen, menschenskind: for pete's sake
-ungläubig: disbelieving
+unglaeubig: disbelieving
+unglueck kommt selten allein: it never rains but it pours
 unleserlich: illegible
+unrecht hebt das andere nicht auf: two wrongs don't make it right
 unschuldig: innocent
-verängstigt: frightened
-verärgert: annoyed
+veraengstigt: frightened
+veraergert: annoyed
 verdutzt: puzzled
 vereinzelte schauer: scattered showers
+verkaeufer: shop assistant
 verkatert: hangover
-verkäufer: shop assistant
-verlängerung: extra time
+verlaengerung: extra time
 verlegen: sheepish
 verliebt: lovestruck
 verlobt sein: to be engaged
 verlobte: fiancée
 verlobter: fiancé
 vermittelnd: meditative
-vernünftig: sensible
+vernuenftig: sensible
 verschieben, verlegen: postpone
 versichern: assure
 versorgen: provision
 verteidiger: back, fullback
 vertrocknen: to parch
+verurteilt: condemed
 verwandter: relative, relation
-viel bürokratie: lots of red tape
+viel buerokratie: lots of red tape
 voller bauch studiert nicht gern: you can't study on a full stomach
 vollgas geben: to put the pedal to the metal
 vollzeit: a full-time job
@@ -523,39 +511,43 @@ wahnsinnig: mad
 waise: orphan
 was der bauer nicht kennt, das frisst er nicht: you can't change the habits of a lifetime
 was du heute kannst besorgen, das verschiebe nicht auf morgen: never put off until tomorrow what you can do today
-was hänschen nicht lernt, lernt hans nimmermehr: you can't teach an old dog new tricks
-was ich nicht weiß, macht mich nicht heiß: what the eye does not see the heart cannot grieve over
-was lange währt, wird endlich gut: good things come to those who wait, slow and steady wins the race
+was haenschen nicht lernt, lernt hans nimmermehr: you can't teach an old dog new tricks
+was ich nicht weiss, macht mich nicht heiss: what the eye does not see the heart cannot grieve over
+was lange waehrt, wird endlich gut: good things come to those who wait, slow and steady wins the race
 was man verspricht, muss man halten: promises are made to be kept
-waschbär: racoon
-welche anderen sportarten treibst du, außer fußball?: what other sports do you practise besides football?
+waschbaer: racoon
+weitere erleichterung: facilitate further
+welche anderen sportarten treibst du, ausser fussball?: what other sports do you practise besides football?
 wels: catfish
-wenn das wörtchen wenn nicht wär: if wishes were horses, beggars would ride
-wenn du an meiner stelle wärst: if you put yourself in my shoes
+wenn das woertchen wenn nicht waer: if wishes were horses, beggars would ride
+wenn du an meiner stelle waerst: if you put yourself in my shoes
 wenn zwei sich streiten, freut sich der dritte: when two people quarrel, a third rejoices
-wer a sagt, muß auch b sagen: in for a penny, in for a pound
-wer andern eine grube gräbt, fällt selbst hinein: harm set harm get, you can easily fall into your own trap
-wer den schaden hat, braucht für den spott nicht zu sorgen: don't mock the afflicted
+wer a sagt, muss auch b sagen: in for a penny, in for a pound
+wer andern eine grube graebt, faellt selbst hinein: harm set harm get, you can easily fall into your own trap
+wer den schaden hat, braucht fuer den spott nicht zu sorgen: don't mock the afflicted
 wer nichts macht, macht nichts verkehrt: he who makes no mistakes, makes nothing
 wer rastet, der rostet: a rolling stone gathers no moss
 wer zuerst kommt, mahlt zuerst: first come, first served, the early bird catches the worm
 wespe: wasp
 wie du mir, so ich dir: tit for tat
+wie du willst: as you want
 wie gewonnen, so zerronnen: easy come easy go
 witwe: widow
 wo ein wille ist, ist auch ein weg: where there is a will there is a way
-wo gehobelt wird, fallen späne: you can't make an omelette without breaking eggs
+wo gehobelt wird, fallen spaene: you can't make an omelette without breaking eggs
 wo rauch ist, da ist auch feuer: no smoke without a fire
 womit verdienst du deinen lebensunterhalt?: what do you do for a living?
-würgeschlange: constrictor snake
-wüstenspringmaus: gerbil
-wütend: angry
-zaunkönig: wren
+wuergeschlange: constrictor snake
+wuestenspringmaus: gerbil
+wuetend: angry
+zaunkoenig: wren
 ziege: goat
-zu viele köche verderben den brei: too many cooks spoil the broth
+zu viele koeche verderben den brei: too many cooks spoil the broth
 zufrieden: satisfied
 zugeben: admit
-zur umkehr ist es nie zu spät: it is never too late to mend
+zur umkehr ist es nie zu spaet: it is never too late to mend
 zuversichtlich: confident
+zweck heiligt die mittel: the end justifies the means
 zwei fliegen mit einer klappe schlagen: kill 2 birds with one stone
 zwilling: twin
+zwischendurch: in the meantime
