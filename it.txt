@@ -92,3 +92,7 @@ multipurpose internet mail extensions
 FTS
 full text search
 • refers to searching specific text inside extensive data and returning results that contain some or all of the words (exact match)
+
+OEM
+original equipment manufacturer
+• makes parts and products for other companies which sell them under their own name or use them in their own products
