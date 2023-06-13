@@ -88,3 +88,7 @@ prioritized list of functionality which a product should contain
 
 MIME
 multipurpose internet mail extensions
+
+FTS
+full text search
+• refers to searching specific text inside extensive data and returning results that contain some or all of the words (exact match)
