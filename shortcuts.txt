@@ -7,3 +7,4 @@ shift+f3          toggle capitalization
 win
 ---
 ctrl+shift+esc    taskmanager
+eventvwr          eventviewer 
