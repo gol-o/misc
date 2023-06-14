@@ -1,5 +1,8 @@
 pflichtenheft: requirement specification for contractor
 lastenheft: specifications by client/customer
+kurz, knapp: briefly
+sonderbar, merkwuerdigerweise: oddly
+
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
