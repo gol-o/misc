@@ -1,3 +1,6 @@
+pflichtenheft: requirement specification for contractor
+lastenheft: specifications by client/customer
+
 abladen, ablagern: dump
 abpfiff: (final) whistle
 abschirmen von: to screen from
