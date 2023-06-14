@@ -1,1 +1,2 @@
 kill remote sessions    taskkill /im mstsc* /f
+tasklist image filter   tasklist /fi "imagename eq ax*"
