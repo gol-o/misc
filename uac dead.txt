@@ -497,6 +497,7 @@ GOD is real, unless declared integer (Fortran variables I,J,K,L,M,N are default 
 Decryption: "37OHSSV O773H"
 Metasyntactic variables: foo, bar, baz, qux, quux, quuz, corge, grault, garply, waldo, fred, plugh, xyzzy, thud
 Wir dokumentieren alles, auch die eigenen Fehler! (CGAM)
+
 Scherzfragen
 Verwandte eines Kellners: Oberschwester
 Riss in oberem Körpersteil: Kopfsprung
