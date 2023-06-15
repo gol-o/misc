@@ -3,6 +3,10 @@ outlook
 ctrl+q            mark read
 ctrl+u            mark unread
 shift+f3          toggle capitalization
+ctrl+shift+b      addressbook
+alt+.             to-field
+ctrl+r            reply
+insert            flag/unflag
 
 win
 ---
