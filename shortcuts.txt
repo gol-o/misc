@@ -13,3 +13,4 @@ win
 ctrl+shift+esc    taskmanager
 eventvwr          eventviewer
 alt+1..4          calc' views
+win+space         toggle lang
