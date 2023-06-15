@@ -5,6 +5,7 @@ sonderbar, merkwuerdigerweise: oddly
 mir wurde angetragen, dass ein geraet zur verfuegung stehen wuerde: i has been told that a device would be available
 referenz, beglaubigung: credential
 automatische vervollstaendigung: auto-completion
+empfaenger: recipient
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
