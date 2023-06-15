@@ -3,6 +3,7 @@ lastenheft: specifications by client/customer
 kurz, knapp: briefly
 sonderbar, merkwuerdigerweise: oddly
 mir wurde angetragen, dass ein geraet zur verfuegung stehen wuerde: i has been told that a device would be available
+referenz, beglaubigung: credential
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
