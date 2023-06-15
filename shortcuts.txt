@@ -11,4 +11,5 @@ insert            flag/unflag
 win
 ---
 ctrl+shift+esc    taskmanager
-eventvwr          eventviewer 
+eventvwr          eventviewer
+alt+1..4          calc' views
