@@ -6,6 +6,7 @@ mir wurde angetragen, dass ein geraet zur verfuegung stehen wuerde: i has been t
 referenz, beglaubigung: credential
 automatische vervollstaendigung: auto-completion
 empfaenger: recipient
+spielplatz: playground
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
