@@ -1,10 +1,7 @@
 30	30 cm Säule (z. B. A12.02)	SOP-001206-4
 45	45 cm Säule (z. B. A12.05)	SOP-001206-4
 "
-𝑞
-𝑚𝑎𝑥
-(
-"	Maximale Reaktionsleistung	WEI-001324-2
+𝑞𝑚𝑎𝑥	Maximale Reaktionsleistung	WEI-001324-2
 %CV	relative Standardabweichung	SOP-002767-1
 %RH	Relative Luftfeuchtigkeit (relative humidity)	SOP-001393-3
 (Analysen-) Muster / Sample	Portion aus einer grösseren Menge Material; das Muster kann die Eigenschaften der Gesamtmenge des Materials nur mit einem gewissen Fehler repräsentieren	SOP-002589-5
