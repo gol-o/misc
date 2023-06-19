@@ -1,6 +1,5 @@
 30	30 cm Säule (z. B. A12.02)	SOP-001206-4
 45	45 cm Säule (z. B. A12.05)	SOP-001206-4
-"
 𝑞𝑚𝑎𝑥	Maximale Reaktionsleistung	WEI-001324-2
 %CV	relative Standardabweichung	SOP-002767-1
 %RH	Relative Luftfeuchtigkeit (relative humidity)	SOP-001393-3
@@ -31,7 +30,6 @@ eine Untersuchung eines Qualitätsproblems im Rahmen einer Abweichung / Reklamat
 „Rinse“-Analyse	Analyse zur Bestimmung des unspezifischen und/oder spezifischen Rückstands in einem Apparat oder einer Apparatelinie anhand eines Aliquots der am Ende eines Spülgangs erhaltenen Lösung (in der Regel des „Last Rinse“).	SOP-001143-3
 „Sample Condition“ (LIMS)	"Die LIMS ""Sample Condition"" beschreibt den aktuellen Status eines Samples aus rein analytischer Sicht (Ergebnis-Bearbeitung / -Bewertung).
 Es beschreibt NICHT den Status eines Materials (Batch)
-
 Die LIMS ""Sample Conditions"" ""Approved"" / """"Approved Level 1"" sind Voraussetzung für die Vergabe des ""RELEASE STATUS"" im LIMS
 Siehe auch I-006252"	SOP-001258-6
 "„Sample Status"" (LIMS)"	"Der LIMS ""Sample Status"" beschreibt den aktuellen Bearbeitungsstand eines Samples.
@@ -246,13 +244,9 @@ ALLQ	Allgemeine Lieferantenqualifizierung	SOP-002960-2
 ALLQ	Allgemeine Lieferantenqualifizierung (GeSQ in Englisch)	SOP-001160-6
 ALLQ / PBLQ	Allgemeine Lieferanten Qualifizierung / Produktebezogene Lieferanten Qualifizierung	SOP-001286-5
 "ALLQ
-
 PBLQ
-
 RALQ"	"Allgemeine Lieferantenqualifizierung (GeSQ in Englisch)
-
 Produktbezogene Lieferantenqualifizierung (PSSQ in Englisch)
-
 Lieferantenqualifizierung zur Reduzierung des Analysenumfangs (SQRT in Englisch)"	SOP-001157-5
 Alox	Aluminiumoxid	SOP-001397-4
 Alox-Tiegel	Aluminiumoxidtiegel	SOP-001134-4
@@ -572,7 +566,6 @@ dem Analysenzertifikat (CoA)
 dem Compliance-Zertifikat (CoC)"	SOP-001250-3
 BauAV	Bauarbeiterverordnung vom 29. Juni 2005 (jeweils aktueller Stand)	WEI-004457-1
 Baugleicher Ersatz (Like for Like)	"Der Ersatz ist vergleichbar/hat die gleiche/gleichwertige funktionelle Charakteristik (weder eingeschränkt noch erweitert) und besteht aus den gleichen produktberührten Materialien (siehe Abschnitte 5.1.1 und 5.1.2 für Details und Ausschlüsse)
-
 „Gleich“ im Sinne dieser SOP bedeutet, dass die allfälligen Unterschiede für die Funktion bzw. den Gebrauch/Einsatzzweck nicht relevant sind."	SOP-001070-4
 BAZL	Bundesamt für Zivilluftfahrt 	WEI-001175-5
 BAZL	Bundesamt für zivile Luftfahrt	SOP-001177-4
@@ -789,7 +782,6 @@ Bund Integrity	"The measurement and assessment of the bund areas ability to hold
 Bunded Areas	"A designated area segregated by a constructed retaining wall around storage ""where potentially polluting substances are handled, processed or stored, for the purposes of containing any unintended escape of material from that area until such time as a remedial action can be taken."""	WEI-005903-1
 Business Continuity	"Business continuity focuses on the risk management, oversight and planning and organization needs to stay operational during a disruption. Process owners of business critical processes are responsible for identifying, defining and implementing business continuity measures to ensure the process during the interruption if required. "	SOP-001163-4
 Business Continuity	"“The capability of the organization to continue to deliver services at acceptable established levels following a disruptive event.”
-
 “The ability of the organization to continue operating (and delivering services) outside of normal operating conditions.”"	MHB-005255-1
 "Business Continuity Plan / Geschäftskontinuitätsplan
 (BCP)"	"MHB-Dokumente der Ebene 2, die dazu dienen, die Geschäftsrisiken für den Fall des Ausfalls eines kritischen Systems zu bewerten, und alternative Prozesse und Massnahmen für solche Ereignisse festzulegen."	MHB-001000-4
@@ -990,8 +982,7 @@ Examples: Extending a maintenance interval, correcting the wording in change-obl
 Major
 A change is classed as major if, as a result of its implementation, an impact on patient safety, product quality or data integrity is possible and cannot be excluded.
 Examples: Changes to specification limits / test points, reanalysis period / storage conditions, use of a different analytical method, modification and revalidation of equipment / changes in facilities (including building and utilities) / updating SOPs / updating analytical methods.
-
-"	MHB-005478-1
+	MHB-005478-1
 Change Control	"A planned temporary or permanent modification to a process/system. Classified as either major or minor depending on their impact on safety, product quality and data integrity."	SOP-004365-2
 Change Notification (CN)	"Informationsdokument von Lieferanten zu bestimmten Änderung/en von Daten, Situationen, Prozesse, usw., bei denen Sie verpflichtet sind den Auftraggeber zu informieren oder die Zustimmung einzuholen."	SOP-003163-3
 Changement majeur	"Un changement est classifié majeur, si après son implémentation, un impact est attendu sur la sécurité du patient, la qualité du produit ou l’intégrité des données.
@@ -1109,11 +1100,9 @@ Complaint	"An expression of dissatisfaction raised by a CGAM in respect of produ
 Complaint	"An expression of dissatisfaction raised by a customer in respect of products or services supplied by CGAM Manchester. Classified into categories that include major and minor depending on its impact on safety, product quality and data integrity."	SOP-004079-5
 Complaint	"Generic term for all types of complaints regarding deliveries or services provided by a vendor.
 A classification in minor, major and critical can be made according to the type of complaint as follow:
-
 Minor
 secondary packaging is damaged
 deviation from delivery documentation (quantity, batch no., article no. …)
-
 Major
 label missing / wrong container labelling
 wrong product delivered
@@ -1125,13 +1114,10 @@ product was delivered OOS (according to supplier CoA)
 product contains particles
 product contains foreign materials (spatula, pen, paper, …)
 documentation can not be delivered (CoA, TSE/BSE certificate)
-
 Critical
 analytical results delivered were wrong
 recall or failed authorities inspection
 Quality Agreement was not followed (critical deviation or change not communicated on time, failed authorities inspection not communicated to CGAM, change in the route of synthesis, specification or manufacturer without informing CGAM)
-
-
 Depending on the investigation results, a downgrading is still possible."	SOP-005619-1
 Compliance–Zertifikat (CoC)	"Statement, das die Einhaltung von Regularien und produktspezifischen Festlegungen bestätigt (siehe auch L-002323)"	SOP-001250-3
 Component	Part/element/compound of the Analytical Technique being focused on	WEI-004803-3
@@ -1267,7 +1253,6 @@ Covid-19	"A severe strain of a RNA viral infection of the lungs characterized by
 cp	spezifische Wärmekapazität / Heat Capacity	WEI-001324-2
 CP	Cleaning Personnel 	SOP-005872-1
 "CpK-Wert
-
 /
 :	Mean of the process data
 LSL:	Lower Specification Limit
@@ -1414,7 +1399,6 @@ Dedicated Equipment for Bioconjugate Production	"Equipment exclusively used in m
 Dedicated Geräte	"Geräte, welche nur für die Verwendung innerhalb einer Synthesesequenz freigegeben sind.
 Die Geräte sind gemäss Kapitel 5.16 gekennzeichnet."	SOP-001154-11
 Default Cleaning Limits	"The default cleaning limits have been established to enable the release of equipment for use even when the precleaning assessment cannot be executed because the next product is not yet known.
-
 Standard cleaning is carried out to a limit of 30 mg/L non-specific residue (in every case) and an additional 30 mg/L specific residue after an active previous product or 10 mg/L specific residue after a highly active previous product, corresponding to cleaning limit type B. However, if the active previous product has the same activity (i.e. same mechanism of action, no higher potency) as the final product resulting from the next product, then the specific limit requirement can be covered by measuring a non-specific residue (as for inactive previous products). This is usually applicable to late intermediates within the synthesis sequence."	SOP-001153-6
 Default Sample Report	"(= Summary of Analytical Results, SAR)
 Stellt die Ergebnisse einer beliebigen Probe formlos zusammen, dient nur zur Information"	SOP-001250-3
@@ -1431,8 +1415,6 @@ Design Qualification (Designqualifizierung) (DQ)	Die Designqualifizierung ist de
 Design Space	"Die multidimensionale Kombination und Wechselwirkung von Eingangsgrössen und Prozessparametern, mit welchen gezeigt wurde, dass die gewünschte Qualität erreicht wird. 
 Typischerweise wird ein Design Space mit Hilfe von Werkzeugen wie Design of Experiments (DoE) erarbeitet (siehe auch SOP-001182 (SOPG-06.01.05, Statistische Versuchsplanung DOE)). Ein Design Space wird als Erweiterung der Proven Acceptable Ranges gesehen"	SOP-001059-2
 "Design Space 
-
-
 Design of Experiments (DOE)"	"Multidimensional combination and interaction of input variables (e.g., material attributes) and process parameters that have been demonstrated to provide assurance of quality. 
 Usually the design space is determined with tools like DOE."	SOP-001057-3
 Desinfizieren	"Reduktion, Abtötung bzw. irreversible Inaktivierung der Zahl der krankheitserregenden Keime auf einer Fläche oder einem Gegenstand, so dass davon keine Infektion ausgehen kann (Keimzahlerniedrigung).
@@ -1492,7 +1474,6 @@ Diluent	#NAME?	SOP-005739-1
 DIN EN 511	Minimum requirements for safety gloves in relation to protection from cold.	SOP-004070-3
 DIPNA	N-Nitrosodiisopropylamine	SOP-005987-1
 Direction	"Personne ou groupe de personnes qui oriente et contrôle une entreprise ou un site au plus haut niveau et qui est pourvu de l’autorité et des responsabilités pour mobiliser les ressources au sein de cette entreprise ou de ce site (ICH Q10 basé sur la définition de l’ISO 9000 :2005).
-
 La Direction se compose du Président et des Directeurs généraux délégués."	MHB-005824-2
 Disaster	"A disaster is a serious disruption of one or more services over a relatively short period of time, affecting the operation of the business or leading to great losses."	SOP-001163-4
 Disaster Recovery	"Measures taken after an incident ensuring that IT data and infrastructure will be restored to the pre-disaster state as efficiently as possible. The service is restored with a minimal (acceptable?) impact. 
@@ -1565,19 +1546,16 @@ Un médicament qui a subi toutes les étapes de production, y compris le conditi
 DPTE	Double porte de transfert étanche	INS-004957-2
 DR	"Degradation resistance – rate of deterioration in one or more physical properties of a glove material due to contact with a chemical. Certain glove materials may become hard, stiff, or brittle, or they may grow softer, weaker, and swell to several times their original size. If a chemical has a significant impact on the physical properties of a glove material, its permeation resistance is quickly impaired."	SOP-004070-3
 Dreifachhandschuhe	"Nitril + Veterinär + Nitril (bei Feststoffen): Der äussere Nitril-Handschuh schützt den wenig stabilen Veterinärhandschuh. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Veterinärhandschuhe.
-
 Nitril + LLDPE „Barrier“ + Nitril (bei Flüssigkeiten): Der äussere Nitril-Handschuh ermöglicht das Arbeiten mit dem unförmigen Barrier-Handschuh und erlaubt dessen Mehrfachbenutzung. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Barrier-Handschuhe."	WEI-001310-6
 Dreifachhandschuhe	"Nitril + Veterinär + Nitril (bei Feststoffen): Der äussere Nitril-Handschuh schützt den wenig stabilen Veterinärhandschuh. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Veterinärhandschuhe.
 Nitril + LLDPE „Barrier“ + Nitril (bei Flüssigkeiten): Der äussere Nitril-Handschuh ermöglicht das Arbeiten mit dem unförmigen Barrier-Handschuh und erlaubt dessen Mehrfachbenutzung. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Barrier-Handschuhe."	WEI-001340-5
 Dreifachhandschuhe	"Nitril + Veterinär + Nitril (bei Feststoffen):
 Der äussere Nitril-Handschuh schützt den wenig stabilen Veterinärhandschuh. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Veterinärhandschuhe.
-
 Nitril + LLDPE „Barrier“ + Nitril (bei Flüssigkeiten):
 Der äussere Nitril-Handschuh ermöglicht das Arbeiten mit dem unförmigen Barrier-Handschuh und erlaubt dessen Mehrfach-benutzung. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Barrier-Handschuhe."	WEI-001334-5
 "Dreifachhandschuhe 
 "	"Nitril + Veterinär + Nitril (bei Feststoffen): 
 Der äussere Nitril-Handschuh schützt den wenig stabilen Veterinärhandschuh. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Veterinärhandschuhe.
-
 Nitril + LLDPE „Barrier“ + Nitril (bei Flüssigkeiten): 
 Der äussere Nitril-Handschuh ermöglicht das Arbeiten mit dem unförmigen Barrier-Handschuh und erlaubt dessen Mehrfach-benutzung. Der innere Nitril-Handschuh garantiert den Schutz der Hände beim Ausziehen der kontaminierten Barrier-Handschuhe."	WEI-001336-5
 Drug Product (DP)	"A finished dosage form, for example, tablet, capsule, solution, etc., that contains an active drug ingredient generally, but not necessarily, in association with inactive ingredients. The term also includes a finished dosage form that does not contain an active ingredient but is intended to be used as a placebo"	MHB-003351-1
@@ -1667,7 +1645,6 @@ Eingabefeld	"Eine leere Zelle, die während der Verwendung eines Validierten Exc
 Eingangsrisikoanalyse (ERIA)	Abschätzung der Komplexität des Systems und des Einflusses des Systems auf GMP-relevante Prozesse und die Produktqualität.	SOP-001051-7
 Eingangstest	In L-003959 / L-004273 beschriebener Test nach dem Umzug eines Systems	SOP-001137-8
 Einsatzleiter	"In der Regel der Leiter IG oder Stv. Leiter IG, bei Abwesenheit ein Truppführer der IG, bei Abwesenheit ein IG Mitglied.
-
 Nach Eintreffen der Feuerwehr wird die Einsatzleitung an die Feuer-
 wehr übergeben."	WEI-001318-2
 Einsatzleiter 	"Zu Beginn der Ereignisbekämpfung der Leiter IG, bei Anwesenheit von Feuer- oder Chemiewehr deren Einsatzleiter auf Platz"	WEI-001323-6
@@ -2419,7 +2396,6 @@ Immediate actions do not require approval from QA before being implemented"	SOP-
 From the quality point of view, the measure must not result in any irreversible change to the object in question.
 EXCEPTION: When it is absolutely essential to prevent further potential injuries to people or damage to the product, data, or the environment.
 Measures already predefined in MHB documents (for example, corrections in documents, on labels, and so on).
-
 Immediate actions do NOT require approval by the quality department before being implemented."	MHB-005478-1
 IMO	International Maritime Organization = Internationale Seeschifffahrts-Organisation. 	SOP-001177-4
 IMO	International Maritime Organisation	SOP-004054-5
@@ -2706,7 +2682,6 @@ Die eingescannten Konformitätszertifikate werden unter folgendem Pfad abgelegt:
 Kontaktperson	"Mitarbeiter, welcher für den Empfang und die Betreuung des Fremdpersonals und der Besucher verantwortlich ist. Er/Sie ist dafür verantwortlich, dass während der gesamten Anwesenheit die Betreuung sichergestellt ist."	SOP-001037-4
 Kontaminierte Herstellungsdokumentation	"Papierdokumentation, die sich während exponierender Tätigkeiten im HP-Bereich befunden hat: Dazu gehören Dokumente die mit HP-Substanzen verunreinigt sein könnten und Dokumente die durch eine Havarie bekanntermassen kontaminiert wurden."	SOP-001204-4
 Kontrollgrenze (Control Limit)	"Die Kontrollgrenze definiert die Mindestanforderung eines Tests (Routine Check, Repeatability, Eccentricity), welche erfüllt werden muss, damit die Waage für GMP Zwecke verwendet werden darf. Die Kontrollgrenze wird für jede Waage und den entsprechenden Test im LabX hinterlegt.
-
 Wird die Kontrollgrenze mehrfach überschritten, muss die Waage für den GMP Gebrauch gesperrt werden. Siehe dazu Kapitel 14."	SOP-002398-8
 Kontrollgrenzen (Control Limits)	"… werden als Kriterien verwendet, um zu erkennen, ob ein Prozess / Produkt sich unter “statistischer Kontrolle” befindet. 
 Lower control limit (LCL): Minimalwert der Kontrollkarte, der “statistische Kontrolle” anzeigt.
@@ -2797,9 +2772,7 @@ Labor-Untersuchung Level 2	"Eine geplante, experimentelle Untersuchung eines OOX
 LabX	Ansteuerungs- und Datenverwaltungssystem von Mettler Toledo	SOP-001085-3
 LabX	"LabX ist das System, welches dazu verwendet wird, Einwaagen direkt ins LIMS zu schicken. Zusätzlich ist es das primäre Verwaltungstool für Waagen, Gewichte und deren Quality Settings.
 Die Daten, welche durch das LabX gespeichert werden, gelten als Rohdaten.
-
 Um neue Waagen im LabX aufzunehmen muss gemäss den entsprechenden Formularen (F-004423 für XP/XPE Waagen, F-004454 für XPR Waagen) vorgegangen und dokumentiert werden. Bei neuen Waagen werden die ausgefüllten Formulare der Erstqualifizierung beigelegt. Bei schon vorhandenen Waagen wird ein Scan im LIMS Instrumentenmodul und das Original im Geräteordner abgelegt.
-
 Gewichte werden gemäss I-004455 im LabX aufgesetzt."	SOP-002398-8
 LabX	Ansteuerungs- und Datenverwaltungssystem von Mettler Toledo	SOP-002836-6
 LabX	Ansteuerungs- und Datenverwaltungssystem von Mettler Toledo	SOP-001092-3
@@ -3000,7 +2973,6 @@ LOTO	"The safe Lock Out and Tag Out (With reference to the guidance note HS (G) 
 and equipment), of equipment on plant."	SOP-004073-3
 LOTO	Lock-Out-Tag-Out	SOP-004073-3
 LQ	"Limited Quantities, deutsch begrenzte Mengen. Für CGAM nur für ADR relevant
- 
 Erlaubt den Transport in nicht UN Gebinden und ohne ADR-Führerschein"	WEI-001332-2
 LRQA	Lloyd’s Register Quality Assurance	SOP-004059-5
 LRV	Luftreinhalteverordnung (SR 814.318.142.1)	WEI-001312-3
@@ -3259,7 +3231,6 @@ MoA	Method of Analysis (Analysenvorschrift)	SOP-001397-4
 MoA	Method of Analysis (Analysenvorschrift; neuer Begriff für AVM/MB)	SOP-005552-1
 MoA	Method of Analysis = Analysen-Vorschrift 	SOP-001240-4
 MoA	"Produktspezifische Analysenvorschrift (engl. Method of Analysis1)
-
 1Neuer Überbegriff, fasst die folgenden zwei Dokumententypen zusammen:
 AVM (Analysenvorschrift für M-Nummer (Material-Nummer), eine Monographie, die Informationen zu allen Methoden zur jeweiligen M-Nummer enthält)
 MB (Methodenblatt – eine ausführliche Beschreibung eine bestimmten Methode zu einem (oder mehreren) Molekülen, welche über die C-Nummer identifiziert wurden)"	SOP-001290-7
@@ -3588,9 +3559,6 @@ PAR	Proven Acceptable Range	SOP-001281-8
 PAR	Proven Acceptable Range: confirms acceptable process parameters Definition see SOP-01057	SOP-001062-3
 PAR 	Proven Acceptable Range	SOP-006484-1
 "PAR (Proven Acceptable Range)
-
-
-
 PAR Study"	"Characterized range of a process parameter: operating within this range, while keeping other parameters constant, will result in producing a material meeting relevant quality criteria (ICH Q8).
 During the PAR Studies the PARs are systematically determined. CPPs are also defined during the PAR studies."	SOP-001057-3
 PAR study	"For definition, see SOP-001059 (Process Performance Assessment (PPA))"	SOP-001060-3
@@ -3854,9 +3822,7 @@ Preventive Action (PA)	Action to eliminate the cause of a potential nonconformit
 "Preventive Action, PA"	Action to eliminate the cause of a potential incident or other undesirable potential situation. Preventive action should prevent the occurrence of the potential incident. 	MHB-005478-1
 Previous Product	"The previous product is the last compound (organic raw material, intermediate or API) to be produced or processed in the equipment (“last in”). 
 Organic raw materials may count as previous products only if they contribute significantly to the chemical structure of the corresponding stage product (i.e. synthesis ""building blocks"") and their use entails a regular cleaning procedure (as defined in SOP002498).
-
 Reagents, auxiliary chemicals or solvents do not classify as previous products, unless an equipment item was used for none of the eligible previous product options for 3 consecutive campaigns.
-
 When determining the previous product, it is required to retrace the usage of an item of equipment back for a maximum of 3 campaigns until the last eligible previous product is reached. If an item of equipment was only used for reagents, auxiliary chemicals or solvents for 3 consecutive campaigns, then the most recent analytical result (RoE) should be selected and the article number for the respective reagent or auxiliary chemical entered in the precleaning evaluation, see SS6203B."	SOP-001153-6
 Primäre Packmittel	Packmittel mit direktem Kontakt zum Material die zur Lagerung oder zum Transport von Materialien verwendet werden (siehe auch SOP-001005 (Begriffsdefinitionen für Rohstoffe und Zwischenprodukte)).	SOP-001239-6
 Primäres Kontrollthermometer	"Synonyme: Referenzthermometer / Referenztemperaturmessgerät Primäre Kontrollthermometer (Prüfmittel) werden als Referenzthermometer zur Überprüfung jeglicher Thermometer / Geräte eingesetzt und dürfen nur mit entsprechenden Prüfzertifikaten verwendet werden.
@@ -3868,7 +3834,6 @@ Primary Document	"An MHB Document which describes the proper use of an Attachmen
 Primary Documents	"Documents having a three-character type prefix; primary documents may have one or more supplements, which support the processes they describe. For a list and descriptions of all document types, see MHB-003691 (Corporate Document Management), SOP-003690 (Corporate Management Handbook), and applicable site-specific documents."	BCP-005360-2
 "Primeres Kontrollthermometer mit entsprechenden kalibrierten Temperaturfühlern
 "	"Siehe AS-SOP-001101 (Kalibration von Thermometer in Development und QC&A)
-
 z.B. ALMEMO 2290-8 mit Pt100 (-200 bis 850 °C) und Thermoelement Typ-K (0 bis 1100 °C)
 "	SOP-001128-10
 Privilege Group und Roles	Gruppe von Chromeleon-Nutzern mit gleichen funktionellen Berechtigungen	SOP-001162-4
@@ -4406,7 +4371,6 @@ Reinigungsverantwortlicher	"Internes oder externes geschultes Fachpersonal, welc
 Rejected Zone	"Zone für Waren, deren Qualität für den geplanten Zweck nicht genügt oder über die Abklärungen zur Qualitätskonformität im Gange ist. Waren aus der Rejected Zone dürfen nicht für GMP Zwecke verwendet werden. Über eine andere Verwendung kann der Bedarfsträger von Fall zu Fall entscheiden."	SOP-001195-8
 Release-Status im LIMS	"LIMS-Attribut, in dem der Freigabe-Status des Materials ersichtlich ist."	SOP-001259-5
 Relevante Kunden- bzw. Dienstleisterdokumente(innerhalb der SOP „Dokumente“ genannt)	"Dokumente von Kunden bzw. Dienstleistern, die im weiteren Projektverlauf relevant sind und die in CGAM Dokumenten referenziert werden. Diese sind z.B.:
-
 Risikoanalysen
 ESH Daten
 Entwicklungsberichte
@@ -4776,7 +4740,6 @@ Software classification	Software are classified in different classes	SOP-001166-
 Software-Kategorien nachGAMP 5	"Einteilung von Software nach dem Ausmass ihrer Einzigartigkeit (Standardsoftware bis individuell erstellte Software), siehe SOP-001166."	SOP-004766-2
 Solid materials containing solvents	"> 0.5% solvent content.
 Solvents with flashpoint >55 °C at room temperature are non-critical however.
-
 "	SOP-005237-2
 Solubility screening	Determination of w/v% solubilities	SOP-001149-5
 Solubility testing	Determination of w/w% solubility of the compound in the solvent(s) to be used for the fine cleaning.	SOP-001149-5
@@ -5100,13 +5063,7 @@ TGZ	Im Axapta-System definierte Artikelgruppe für zugekaufte Wirkstoffe/ Fertig
 THA  	Temporary Handling Area	WEI-005903-1
 The Work at Height Regulations 2005	Regulations governing the duty of employers to protect the workforce from the hazards caused by work at height.	SOP-004073-3
 "Thermoelement
-
-
-
-
-
 Typ S
-
 Typ K"	"Ein Thermoelement wandelt durch Thermoelektrizität Wärme in elektrische Energie um. Dazu werden zwei Leiter aus unterschiedlichen Materialien elektrisch miteinander verbunden. Zwischen ihren Enden liegt dabei eine Spannung an, die von der Temperaturdifferenz zwischen den Enden und der Kontaktstelle abhängt.
 Typ S steht für ein Platin-Rhodium (Pt10Rh-Pt) Element und wird typischerweise für Temperaturbereiche von 0 bis 1600 °C eingesetzt.
 Typ K steht für ein Nickel-Chrom / Nickel (NiCr-Ni) Element und wird typischerweise für Temperaturbereiche von 0 bis 1100 °C eingesetzt."	SOP-001101-7
@@ -5451,8 +5408,6 @@ W	Supplementary Document- Worksheet. Exists in 2 types – Excel and Excel with 
 Waagentypen	"Die Unterteilung der Waagen erfolgt in folgende zwei Typen:
 Typ I:Feinwaagen(Mikro- und Analysenwaagen)
 Typ II:GMP Grobwaagen und Präzisionswaagen (Wirkstoffherstellung)
-
-
 Die Einteilung erfolgt bei der Erstqualifizierung und wird auf der Waage vermerkt. 
 Der Waagen-Typ ist unabhängig von der System-Klassifizierung nach SOP-001051 (Qualifizierung von Systemen)."	SOP-002398-8
 Wägegenauigkeit	"Die Wägegenauigkeit ist eine rechnerische Grösse, die in einem prozentualen Wert ausgedrückt wird.
@@ -5548,7 +5503,6 @@ Workflow	"A defined set of work steps in the ECM used for the creation, revision
 Worklist	"Im LIMS erstellte Liste von auf einem Gerät zu messenden Proben
 Oder: Format in den Daten (Sequenzen) eines LIMS in Chromeleon eingelesen werden können. Die Worklist beschreibt Inhalt und Aufbau einer Sequenz"	SOP-001162-4
 Worksheet	"Ein elektronisches Dokument des Typs .xls, .xlsx, oder .xlsm, für Anwendung in Microsoft Excel. Worksheets werden erstellt, um die Berechnung von qualitätsrelevanten Daten zu unterstützen, oder durch programmierte Logik die Einhaltung definierter Akzeptanzkriterien zu prüfen. Zur Kalkulation werden, soweit möglich, die von Excel vorgegebenen Funktionen verwendet.
- 
 Excel-Worksheets können gemäss den Vorgaben dieser SOP validiert werden, um die Zuverlässigkeit ihrer Berechnungen zu belegen. Für den Umgang mit nicht-validierten Worksheets sind besondere Regeln zu beachten. Wenn Makros für eine Berechnung verwendet werden, so sind diese zu validieren."	SOP-001300-6
 Worksheet(W)	"Validierte Excel-Sheets zur Zusammenstellung spezifischer Informationen – z. B. verbunden mit automatisierten Auswertungen, Berechnungen usw. Sie werden gem. SOP-001300 (Handhabung und Validierung von Excel-Worksheets) erstellt und gehören sind Anhang-Dokumente der Ebene 3."	MHB-001000-4
 Worksheet/W	Attachment to an SOP used as a template for documentation of e.g. calculations	MHB-003691-2
@@ -5608,13 +5562,10 @@ Zyklus	Ein Durchlauf der programmierten Methode. Mehrere Zyklen ergeben einen Ba
 "α,β-Klappe"	"2-teilige Ladeklappe für staubarmes und Totraum-minimiertes Laden von Feststoffen mit einem fest auf dem Reaktor montierten Aktivteil und einem mobilen Passivteil, das mit einem Transfer-Container oder einem Charge-Bag verbunden ist."	SOP-001222-4
 ΔTad	Adiabatic temperature rise	MHB-006441-1
 ε280mAb	"molarer Extinktionskoeffizient des Antikörpers/Proteins bei 280 nm. Er entspricht dem Massenextinktionskoeffizient multipliziert mit der molaren Masse des Antikörpers/Proteins. Wenn der Extinktionskoeffizient nicht experimentell bestimmt wurde, kann er folgendermassen berechnet werden (aus USP <507> Method IB):
-
-
 ε
 mAb
 280
 =
-
 n
 Trp
 ×5500+
@@ -5624,14 +5575,11 @@ Tyr
 n
 Cys
 ×125
-
  mol
 -1
-
  cm
 -1
  L
-
 nTrp	= Anzahl Tryptophan in der Aminosäuresequenz
 nTyr	= Anzahl Tyrosin in der Aminosäuresequenz
 nCys	= Anzahl Cystein in der Aminosäuresequenz
