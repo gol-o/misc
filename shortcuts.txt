@@ -8,6 +8,13 @@ alt+.             to-field
 ctrl+r            reply
 insert            flag/unflag
 
+enaio
+-----
+ctrl+q            inbox
+ctrl+t            close tabs
+ctrl+w            object search
+ctrl+z            doc as attachment
+
 win
 ---
 ctrl+shift+esc    taskmanager
