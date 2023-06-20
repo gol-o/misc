@@ -79,7 +79,7 @@ qualitative comparative analysis
 • requires in-depth knowledge of cases
 
 1. Level MHB
-MHB → management hand book
+MHB → management hand book (chapter)
 SMF → site master file (describes GMP information on production level)
 POL → policy (value and fundamental requirements)
 PRO → process (overall process)
@@ -89,6 +89,9 @@ SOP → standard operating procedure
 WEI → advisory, weisung (work or behavioral instructions)
 REG → regulation
 BCP → business continuity plan (risk evaluation)
+
+DIR → directive
+INS → instruction
 
 3. Level Supplements
 F → form
