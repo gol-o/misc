@@ -7,6 +7,7 @@ referenz, beglaubigung: credential
 automatische vervollstaendigung: auto-completion
 empfaenger: recipient
 spielplatz: playground
+obligatorisch: mandatory
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
