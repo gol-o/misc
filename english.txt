@@ -1,14 +1,3 @@
-pflichtenheft: requirement specification for contractor
-lastenheft: specifications by client/customer
-kurz, knapp: briefly
-sonderbar, merkwuerdigerweise: oddly
-mir wurde angetragen, dass ein geraet zur verfuegung stehen wuerde: i has been told that a device would be available
-referenz, beglaubigung: credential
-automatische vervollstaendigung: auto-completion
-empfaenger: recipient
-spielplatz: playground
-obligatorisch: mandatory
-
 abladen, ablagern: dump
 abpfiff: (final) whistle
 abschirmen von: to screen from
@@ -48,6 +37,7 @@ auspuffgase: exhaust fumes
 ausstossen: to emit
 austrocknen: to dry up
 auswechselspieler: substitute
+automatische vervollstaendigung: auto-completion
 azubi, lehrling: apprentice, trainee
 bandwurm: tapeworm
 bauarbeiter: construction worker
@@ -130,6 +120,7 @@ elch: moose (ae)
 elend: miserable
 elfmeterpunkt: penalty spot
 elfmeterschiessen: penalty shoot-out
+empfaenger: recipient
 empfehlung des tages: today's special
 ende gut, alles gut: all's well that ends well
 energieeinsparung: energy conservation
@@ -293,9 +284,11 @@ kuendigen: to dismiss somebody, to give somebody notice
 kuendigungsfrist: period of notice
 kuestengewaesser: coastal waters
 kundenberater: customer adviser
+kurz, knapp: briefly
 lachender hans: kookaburra
 lachs: salmon
 lamm: lamb
+lastenheft: specifications by client/customer
 laus: louse (pl lice)
 lauscher an der wand hoert seine eigne schand': listeners hear no good of themselves
 lebenslauf: cv (curriculum vitae)
@@ -337,6 +330,7 @@ meerschweinchen: guinea pig
 mehrwertsteuer: vat (value-added tax)
 meise: tit
 menschen, die im glashaus sitzen, sollen nicht mit steinen werfen: people who live in glass houses should not throw stones
+mir wurde angetragen, dass ein geraet zur verfuegung stehen wuerde: i has been told that a device would be available
 misstrauisch: suspicious
 mittelfeldspieler: midfielder
 modedesigner: fashion designer
@@ -367,6 +361,7 @@ nichts dauert ewig: all good things come to an end
 niedlich: adorable
 not macht erfinderisch: necessity is the mother of invention
 nudelgerichte: pasta
+obligatorisch: mandatory
 ochse: bullock
 offene weine (weiss, rosé, rot): wines by the glass (white, blush, red)
 ohne fleiss kein preis: no pains - no gains
@@ -382,6 +377,7 @@ pendler: commuter
 pfau: peacock
 pfauenauge: peacock butterfly
 pflegekind: foster child
+pflichtenheft: requirement specification for contractor
 pfote: paw
 pommes frittes: chips (be), french fries (ae)
 qualle: jellyfish
@@ -392,6 +388,7 @@ raupe: caterpillar
 rausschmeissen: to fire somebody
 rechnung: bill, check, invoice
 reden ist silber, schweigen ist gold: speech is silver silence is gold
+referenz, beglaubigung: credential
 reh: deer
 reiseleiter: tour guide
 religion: religious education
@@ -439,6 +436,7 @@ seitenlinie: side line, touch line
 sekretaerin: secretary
 selbst kuendigen: to quit, to resign
 sie koennen entweder auf rechnung zahlen nach registrierung oder hier per kreditkarte: you can either pay on site by receipt of your accreditation or on this site by credit card
+sonderbar, merkwuerdigerweise: oddly
 sonniger wetterabschnitt: sunny spell
 sparsam im kleinen, aber im grossen verschwenderisch: penny wise, pound foolish
 spatz in der hand ist besser als die taube auf dem dach: a bird in the hand is worth two in the bush
@@ -446,6 +444,7 @@ spatz: sparrow
 specht: woodpecker
 spiel: match
 spielfeld: field, pitch
+spielplatz: playground
 spitze zunge macht noch keinen scharfen verstand: a sharp tongue does not mean that you have a keen mind
 sport: physical education
 stachelschwein: porcupine
