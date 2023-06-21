@@ -1,5 +1,9 @@
 entsprechen, nachkommen: comply with
 gemaess dieser: as per this
+efficacy: wirksamkeit
+beeintraechtigen: compromise
+erhalten: obtain
+genehmigen, zustimmmen: approve
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
