@@ -7,6 +7,8 @@ ctrl+shift+b      addressbook
 alt+.             to-field
 ctrl+r            reply
 insert            flag/unflag
+alt+enter         show properties 
+ctrl+k            autocomplete
 
 enaio
 -----
