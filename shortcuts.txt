@@ -21,5 +21,21 @@ win
 ---
 ctrl+shift+esc    taskmanager
 eventvwr          eventviewer
-alt+1..4          calc' views
 win+space         toggle lang
+
+calc
+----
+alt+1..4          views
+ctrl++            graph zooms in
+ctrl+-            graph zooms out
+spacebar          ui focus
+f2                dword
+f3                word
+f4                byte
+f5                hex
+f6                dec
+f7                oct
+f8                bin
+|                 or
+&                 and
+~                 not
