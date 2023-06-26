@@ -5,6 +5,8 @@ efficacy: wirksamkeit
 beeintraechtigen: compromise
 erhalten: obtain
 genehmigen, zustimmmen: approve
+erledigt, durchgefuehrt: accomplished
+abgeschlossen: completed
 
 abladen, ablagern: dump
 abpfiff: (final) whistle
