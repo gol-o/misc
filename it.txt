@@ -96,3 +96,9 @@ full text search
 OEM
 original equipment manufacturer
 • makes parts and products for other companies which sell them under their own name or use them in their own products
+
+URS
+user requirement specification
+
+BPL
+best practice solution
