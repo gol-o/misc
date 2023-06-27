@@ -1,15 +1,4 @@
-schrank, gehaeuse: cabinet
-entsprechen, nachkommen: comply with
-gemaess dieser: as per this
-efficacy: wirksamkeit
-beeintraechtigen: compromise
-erhalten: obtain
-genehmigen, zustimmmen: approve
-erledigt, durchgefuehrt: accomplished
 abgeschlossen: completed
-voraussetzungen: prerequisites
-voreinstellungen: presets
-
 abladen, ablagern: dump
 abpfiff: (final) whistle
 abschirmen von: to screen from
@@ -59,6 +48,7 @@ bearbeiten: handling, process, work on
 bedienung inklusive: service included
 bedrohen: to menace
 beefsteak: meatloaf
+beeintraechtigen: compromise
 begehen, verpflichten, ausfuehren: commit
 begeistert: ecstatic
 beilagen: sides, side orders
@@ -114,6 +104,7 @@ echse: saurian
 eckball: corner, corner kick
 ecke: corner
 eckkreis: corner arc
+efficacy: wirksamkeit
 ehrlich gesagt: frankly speaking
 ehrlich waehrt am laengsten: honesty is the best policy
 eichhoernchen: squirrel
@@ -125,6 +116,7 @@ eindeutigkeit: uniqueness
 eingebildet: smug
 eingliedern: incorporate
 einhaltung: compliance
+einsatz: on duty
 eintagsfliege, strohfeuer: a flash in the pan
 einwurf: throw-in
 einzelteil: spare part
@@ -141,12 +133,15 @@ enkel (junge): grandson
 enkel: grandchild - grandchildren
 enkelin: granddaughter
 entsetzt: horrified
+entsprechen, nachkommen: comply with
 enttaeuscht: disappointed
 er entschied sich fuer den kellnerberuf: he took a job as a waiter
 er hat die rechnung ohne den wirt gemacht: he had reckoned without his host
 erdwaerme: geothermal
 erfreut: to be pleased
+erhalten: obtain
 erhaltung,: preservation
+erledigt, durchgefuehrt: accomplished
 erneuerbar: renewable
 ernst: serious
 ersatzteilliste: spare part list
@@ -204,7 +199,9 @@ gelangweilt: bored
 geld allein macht nicht gluecklich: money isn't everything
 gelegenheit macht diebe: opportunity makes thieves
 gelegentliche aufheiterungen: sunny intervals
+gemaess dieser: as per this
 gemein: nasty
+genehmigen, zustimmmen: approve
 genehmigen: approve
 genehmigung: permission
 gequaelt: agonized
@@ -427,6 +424,7 @@ schnauze: muzzle
 schneesturm: blizzard
 schnurrhaar: whisker
 schottischer whisky: single malt scotch (whisky)
+schrank, gehaeuse: cabinet
 schrecklich: awful, terrible
 schuldig: guilty
 schuppen: scales
@@ -521,10 +519,13 @@ voller bauch studiert nicht gern: you can't study on a full stomach
 vollgas geben: to put the pedal to the metal
 vollzeit: a full-time job
 vom regen in die traufe: out of the heat, into the frying pan
+voraussetzungen: prerequisites
 vorbeugen ist besser als heilen: a stitch in time saves nine
+voreinstellungen: presets
 vorfahr: ancestor
 vorfall: incident
 vormund: guardian
+vorort: on site
 vorsicht ist besser als nachsicht: better safe than sorry
 vorsichtig: careful, cautious
 vorspeisen (kalt/warm): appetizers (cold/hot)
