@@ -78,10 +78,12 @@ representational state transfer
 SOAP
 simple object access protocol
 • messaging protocol specification for exchanging structured information
+• document level transfer, via http/s, but email as well
 • xml based message format via http
 
 XML-RPC
 extensible markup language remote procedure call
+• value based transfer, via http/s
 
 BACKLOG
 prioritized list of functionality which a product should contain
@@ -102,3 +104,6 @@ user requirement specification
 
 BPL
 best practice solution
+
+PROXY
+
