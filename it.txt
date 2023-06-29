@@ -108,3 +108,8 @@ best practice solution
 PROXY
 procuration
 • system/router that provides a gateway between users and the internet
+
+UNC
+universal naming convention
+• network resource name
+• \\remote\c$, \\server\folder\file.txt
