@@ -43,4 +43,10 @@ f12               qword
 
 citrix
 ------
+ctrl+alt+f1       toggle full/restored view
 alt+esc           switch workspace
+
+vba
+---
+alt+r+r           reset
+debug             f8
