@@ -40,3 +40,7 @@ f12               qword
 |                 or
 &                 and
 ~                 not
+
+citrix
+------
+alt+esc           switch workspace
