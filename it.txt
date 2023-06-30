@@ -113,3 +113,8 @@ UNC
 universal naming convention
 • network resource name
 • \\remote\c$, \\server\folder\file.txt
+
+CDO
+collaboration data objects
+• previously known as ole messaging/active messaging
+• api win/exchange
