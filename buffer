@@ -1,0 +1,821 @@
+' VSL 20.Dec.2020 Vendors_Contract GlobalObjectTypeScript
+
+Const CONTRACT_LOCAL_REGISTER_NAME = "Contracts" 	'sName field of the register into which contracts are placed
+Const CONTRACT_BILLING_FREQS = "weekly|52|bi-weekly|26|monthly|12|quarterly|4|biennially|2|yearly|1"	'could be moved to valuelist but effort worth it?; "per-call" and "other" excluded as not quantifiable
+Const CONTRACT_STATUS_DRAFT = "draft"
+Const CONTRACT_STATUS_VALID = "active"
+Const CONTRACT_STATUS_INVALID = "inactive"
+Const CONTRACT_FIELDS_QAA_ONLY = "iRetainSamples|iRetainDocuments|iCustApprovalSamples|iCustApprovalData"
+
+Const CONTRACT_TABPOS_VENDORNAME = 0
+Const CONTRACT_TABPOS_VENDORTYPE = 3
+Const LISTVALUE_POS_USERNAME = 3
+Const LISTVALUE_POS_EMAIL = 7
+
+Const ATTACHNO_TABINDEX = 0
+
+Class ContractFunctions
+
+	Private Sub Class_Initialize()
+		init_Vendors_ObjDef
+	End Sub
+
+	Sub contract_OnShow()
+		disableContractFields
+		asfile.ResultCode = 1
+	End Sub
+
+	Sub contract_BeforeSave()	'TODO: in 9.1, this should now be assigned to AfterValidate
+		'When the user changes sStatus from "draft" to "active" for a Version 2 or higher document, set the status of the previous version to "inactive"
+		If asfile.EventAction = "UPDATE" Then
+			If Not IsNumeric(Field("iVersion")) Or Field("sStatus") <> CONTRACT_STATUS_VALID Then Exit Sub
+			If getDmsStatus(asfile.RequestPages(2).ID, VCTR.ObjTypeId) = CONTRACT_STATUS_DRAFT And CInt(Field("iVersion")) > 1 Then inactivatePriorVersion		'added condition (was urs req?)
+		End If
+		asfile.ResultCode = 1
+	End Sub
+
+	Sub contract_AfterSave()
+		If asfile.EventAction = "NEW" Then notifyParties
+	End Sub
+
+	Sub OnValueChanged_ContractType()
+		toggleFieldsByIntName CONTRACT_FIELDS_QAA_ONLY, (Field("sContractType") = "Quality Agreement")
+		asfile.ResultCode = 1
+	End Sub
+
+' -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Private Sub disableContractFields
+
+		Dim DISABLE_UPDATE_EXCEPT_FOR : DISABLE_UPDATE_EXCEPT_FOR = "CONTRACTS_RESPONSIBLE|sPartyName|lPartyNo|sContractNo|iVersion|sContractType|sStatus"
+
+		disableFieldUnlessEventIs "btnGetNumber|NEW"
+		disableFieldUnlessEventIs "btnNewAttachment|UPDATE"
+		disableFieldUnlessEventIs "btnShowAttachments|READONLY|UPDATE"
+		disableFieldUnlessEventIs "btnCopyThird|NEW|UPDATE"
+		disableFieldUnlessEventIs "btnX|NEW|UPDATE"
+		disableFieldUnlessEventIs "btnXX|NEW|UPDATE"
+
+		If asfile.EventAction = "NEW" Then
+			With getFieldByInternalName("sStatus")
+				.enabled = False
+				.Value = "draft"
+			End With
+			With getFieldByInternalName("iVersion")
+				.enabled = False
+				If Len(.Value) = 0 Then .Value = 0
+				.Value = .Value + 2
+			End With
+
+			Dim oFolDetails : Set oFolDetails = CreateObject("MSXML2.DOMDocument.6.0")
+			oFolDetails.LoadXML(jobGetObjectDetails(asfile.FolderID, asfile.FolderType, ""))
+			With getFieldByInternalName("sPartyName")
+				.Value = oFolDetails.SelectSingleNode("//Field[@internal_name='sVendorName']").text
+				.enabled = False
+			End With
+			With getFieldByInternalName("lPartyNo")
+				.enabled = False
+				.Value = oFolDetails.SelectSingleNode("//Field[@internal_name='lCreditorNumber']").text
+			End With
+			Set oFolDetails = Nothing
+		End If
+
+		If asfile.EventAction = "UPDATE" Then
+			disableFieldsUnlessUserInGroup(DISABLE_UPDATE_EXCEPT_FOR)
+			If Field("sContractType") <> "Quality Agreement" Then disableFieldsCGAM CONTRACT_FIELDS_QAA_ONLY
+		End If
+
+	End Sub
+
+' Lifecycle (called in BeforeSave / AfterSave) --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	'TODO: 9.1 probably requires moving to AfterValidate
+
+	Private Sub inactivatePriorVersion()
+		Dim lObjID : lObjID = getPriorVersionObjID()
+		If Len(lObjID) = 0 Then Exit Sub
+		If jobXmlUpdate(template_xmlUpdate(lObjID, VCTR.IntName, VCTR.Archive, "sStatus" & D1 & CONTRACT_STATUS_INVALID)) = 0 Then
+			msgbox "Sie haben den Vertrag 'aktiv' gesetzt. Dadurch wurde die Vorgängerversion 'inaktiv' geschaltet."
+		Else
+			msgbox "Achtung: die Vorgängerversion dieses Dokuments ist immer noch 'aktiv'; der Status konnte vom System nicht geändert werden." & vbCrlf & "Bitte kontaktieren sie ihr enaio Helpdesk."
+		End If
+	End Sub
+
+	Private Function getPriorVersionObjID()
+		Dim sConditions : sConditions = "sContractNo" & D1 & "=" & D1 & Field("sContractNo") & D2 & "sStatus" & D1 & "=" & D1 & CONTRACT_STATUS_VALID
+		Dim qryStr : qryStr = template_clientQueryX(VCTR.Archive, VCTR.IntName, sConditions, 0, 0, 0, 0)
+		qryStr = getDocRequestIDs(qryStr)
+		If Len(qryStr) = 0 Then Exit Function
+		getPriorVersionObjID = Split(sStr, ",")(0)
+	End Function
+
+	Private Function getDmsStatus(lObjID, lObjTypeID)	'there is a ClientEvent fxn on Application for this - see GD_BPL GCS / CF
+		Dim xmlDoc : Set xmlDoc = CreateObject("MSXML2.DOMDocument.6.0")
+		xmlDoc.LoadXML(jobGetObjectDetails(lObjID, lObjTypeID, ""))
+		getDmsStatus = xmlDoc.SelectSingleNode("//Field[@internal_name='sStatus']").Text
+		Set xmlDoc = Nothing
+	End Function
+
+	Private Sub notifyParties()		'Notify the correct distribution list with the matching mail text based on Contract Type
+		Dim sNotifyListType, sMail : sMail = MAILTEXT
+
+		If Field("sContractType") = "Quality Agreement" And asfile.RequestPages.Item(0).ASFields.Item(CONTRACT_TABPOS_VENDORTYPE).Value = "Customer" Then
+			sNotifyListType = "QA_MailingList"	'For Q-Agreement with a Customer; in this case the non-standard mail text is used.
+			sMail = QAMAILTEXT
+		ElseIf Field("sContractType") = "Quality Agreement" Then
+			sNotifyListType = "QA_ProcessResponsible"	'For Q-Agreement with a Vendor, notify QA-Process-Responsibles
+		ElseIf InStr(1, D1 & listValues("ContractTypes", 2, "sField3" & D1 & "Quality") & D1, D1 & Field("sContractType") & D1) > 0 Then
+			Exit Sub	'For remaining Q-Relevant contract types, notify no one; exit sub.
+		Else
+			sNotifyListType = "Standard_ProcessResponsible"		'For all non-relevant contract types, notify the Process-Responsibles for standard contracts
+		End If
+
+		Dim listUsers : listUsers = Replace(listValues("ContractsNotificationList", LISTVALUE_POS_USERNAME, "sField1" & D1 & sNotifyListType), D1, ";")
+		Dim listEmails : listEmails = Replace(listValues("ContractsNotificationList", LISTVALUE_POS_EMAIL, "sField1" & D1 & sNotifyListType), D1, ";")
+
+		listUsers = appendString(listUsers, Field("sNotify"), ";", False) 'add the "notify additionally" users
+
+		If Len(listUsers) > 0 Then
+			Dim arrAdd : arrAdd = Split(listUsers, ";")
+			For j = 0 To UBound(arrAdd)
+				If arrAdd(j) <> "" And arrAdd(j) <> 0 Then
+					Dim sAddMail : sAddMail = getUserEmail(arrAdd(j))
+					If sAddMail <> "" Then listEmails = appendString(listEmails, sAddMail, ";", True)
+				End If
+			Next
+		End If
+
+		Dim isNotified, arrParties : arrParties = Split(listEmails, ";") 'notify each e-mail address only once.
+		For i = 0 To UBound(arrParties)
+			If InStr(1, ";" & isNotified & ";", ";" & arrParties(i) & ";") = 0 Then
+				Call jobSendMail(arrParties(i), "osecm@carbogen-amcis.com", "New Contract in enaio - " & getFieldByInternalName("sContractNo").Value, sMail)	'absender
+				isNotified = isNotified & arrParties(i) & ";"
+			End If
+		Next
+	End Sub
+
+' Buttons ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	' Sub btnNewVersion_Click()					'VSL 23.Dec.2020 - FeatureRequest HGL to circumvent the CopyObject behaviour, which seems to have changed in v9.1
+
+		' Dim iVers : iVers = Field("iVersion")
+		' If IsNumeric(iVers) Then
+			' iVers = CInt(iVers) + 1
+		' Else
+			' iVers = 2
+		' End If
+		' Dim lNewObjectId : lNewObjectId = -1
+
+		' If application.CopyObject(asfile.ActivePage.ID, asfile.ActivePage.ObjectType, asfile.FolderID, asfile.RegisterID, 1, lNewObjectId) <> 0 Or lNewObjectId < 1 Then
+			' msgbox application.GetLastError()
+			' asfile.ResultCode = -1 : Exit Sub
+		' End If
+
+		' Dim strUpdate : strUpdate = "[AKTUALISIEREN]" & vbNewLine & "SCHRANK=%Vendors_Vendor%" & vbNewLine & "DOKUMENT=%Vendors_Contract%" & vbNewLine _
+			' & "DOKUMENT-ID=" & lNewObjectId & vbNewLine _
+			' & "FIELD1=%iVersion%=" & Right("00" & iVers, 2) & vbNewLine _
+			' & "FIELD2=%sStatus%=draft" & vbNewLine _
+			' & "Mode=1" & vbNewLine
+
+		' If application.UpdateDocumentData(strUpdate) <> 0 Then
+			' msgbox application.GetLastError()
+			' asfile.ResultCode = -1 : Exit Sub
+		' End If
+
+		' 'IDs = asfile.ActivePage.ID & "," & asfile.ActivePage.ObjectType & ";" & lNewObjectId & "," & asfile.ActivePage.ObjectType
+		' 'Application.OpenResultList lNewObjectId & "," & asfile.ActivePage.ObjectType, "Neuer Vertrag " & Field("sContractNo") '
+		' btnShowRelatedDocuments_Click()
+		' Application.SetResultListSelection(lNewObjectId)
+		' 'Application.OpenDataDlg lNewObjectId, asfile.ActivePage.ObjectType, 1
+		' asfile.ResultCode = 1
+
+	' End Sub
+
+	Sub btnAddAttachment_Click()		' Add Attachment - the "Plus" Button
+		Dim iAttachObjID : iAttachObjID = addNewAttachment()
+		If iAttachObjID > 0 Then
+			Application.OpenResultList iAttachObjID & "," & VATT.ObjTypeId, "Neuer Anhang zu " & Field("sContractNo")
+			Application.OpenDataDlg iAttachObjID, VATT.ObjTypeId, 1
+		Else
+			msgbox "Error - a new attachment could not be created. Please contact your enaio team if the problem persists."
+		End If
+	End Sub
+
+	Sub btnShowRelatedDocuments_Click()	' Show all related objects (Contracts and Attachments with matching number) in result list - the "A" button
+		Dim sConditions : sConditions = "sContractNo" & D1 & "=" & D1 & Field("sContractNo")
+		IDs = getDocRequestIDs(template_clientQueryX(VATT.Archive, VATT.IntName, sConditions, 0, 0, 0, 0))			'Attachments
+		IDs = IDs & getDocRequestIDs(template_clientQueryX(VCTR.Archive, VCTR.IntName, sConditions, 0, 0, 0, 0))		'Contracts
+		Application.OpenResultList IDs, "Verbundene Dokumente" 'IDs = ObjID_1,ObjTypeID_1;ObjID_N,ObjTypeID_N;
+	End Sub
+
+	Sub btnX_Click()	'Calculate contract end date from start date and duration	-	the "X" button
+		Dim dStart : dStart = Field("dStartDate")
+		Dim iDuration : iDuration = Field("iDuration")
+
+		Dim sMsg'Check for acceptable conditions
+		If Len(dStart) = 0 Then sMsg = sMsg & "You need to enter a start date!" & vbCrLF
+		If Len(iDuration) = 0 Then sMsg = sMsg & "You need to enter a duration!" & vbCrLF
+
+		If sMsg <> "" Then msgbox sMsg : Exit Sub
+		Dim dNewDate : dNewDate = DateSerial(Right(dStart, 4), Mid(dStart, 4, 2), Left(dStart, 2))
+		getFieldByInternalName("dEndDate").Value = DateAdd("yyyy", iDuration, dNewDate)
+		asfile.ResultCode = 1
+	End Sub
+
+	' Generates a new Contract Number using the counter (GUID: VENDORS_CONTRACT) and the prefix of the contract type;
+	' Version is always assigned '01'. The counter value is incremented by one for historical reasons; best not change that.
+	Sub btnN_Click()
+						'TODO: get rid of this mechanism alltogether and asign number in aftervalidate
+		Dim sMsg, sType : sType = Field("sContractType")
+		If Len(sType) = 0 Then	'Check for appropriate conditions - check if a Contract Type has been defined
+			msgbox "Sie müssen zuerst einen Vertragstyp festlegen."
+			asfile.ResultCode = -1	'confirm
+			Exit Sub
+		End If
+
+		Dim lMaxNo : lMaxNo = jobGetCounter(VCTR.IntName, 0, 10000, False)
+		Dim sPrefix : sPrefix  = listValues("ContractTypes", 3, "sField1" & D1 & sType)
+		If sPrefix = "" Then sPrefix = "SO"											'TODO: VSL - is this behaviour still wanted? (Sonstige : SO)
+		getFieldByInternalName("sContractNo").Value = sPrefix & "-" & lMaxNo + 1
+		asfile.ResultCode = 1
+	End Sub
+
+	Sub btnXX_Click()		'fills the 'Cost per Year' field if a billing freq. and cost have been provided 	-	the "XX" button
+
+		Dim lCost : lCost = Field("lCost")
+		Dim sMsg, sFreq : sFreq = Field("sBillingFreq")
+
+		'Check for acceptable conditions.
+		If Len(lCost) = 0 Or Not IsNumeric(lCost) Then sMsg = sMsg & "Error: 'Cost' is not valid." & vbCrLF
+		If Len(sFreq) = 0 Then sMsg = sMsg & "Error: you must select a billing frequency to use the calculator!" & vbCrLF
+		If InStr(1, "|" & CONTRACT_BILLING_FREQS & "|", "|" & sFreq & "|") = 0 And Len(sFreq) > 0 Then sMsg = sMsg & "Error: calculation is not supported for billing frequency '" & sFreq & "'."
+
+		If sMsg <> "" Then msgbox sMsg : asfile.ResultCode = 0 : Exit Sub
+
+		Dim i, sFreqArr : sFreqArr = Split(CONTRACT_BILLING_FREQS, "|")
+		For i = 1 To UBound(sFreqArr) Step 2
+			If sFreqArr(i) = sFreq Then getFieldByInternalName("lCostPerYear").Value = lCost * CInt(sFreqArr(i + 1)) : Exit For
+		Next
+		asfile.ResultCode = 1
+	End Sub
+
+	Sub btnMP_Click()		'copies this contract object to an additional Vendor/Customer folder (third party)	-	the "MP" button
+
+		asfile.ResultCode = 0
+		If asfile.EventAction = "NEW" Then msgbox "Bitte erst den Vertrag vervollständigen und speichern, dann erneut im Bearbeitungsmodus öffnen, um zu einer weiteren Partei zu kopieren." : Exit Sub
+
+		Dim lTargetFolderID : lTargetFolderID = getTargetFolderID()
+		If Len(lTargetFolderID) = 0 Then Exit Sub	'cancelled or user failed to make a selection
+
+		Dim lTargetRegisterID : lTargetRegisterID = getTargetRegisterID(lTargetFolderID)
+		Dim sCopyXml : sCopyXml = tmpXmlCopy(VCTR, requestpages.Item(2).ID, lTargetFolderID, lTargetRegisterID, VREG.ObjTypeId)	'RequestPages.ActivePage.ID should be fine here
+
+		On Error Resume Next
+		Call jobXmlCopy(sCopyXml, "LINKDOCUMENT=1")
+		If Err.Number <> 0 Then
+			msgbox "Error linking contract to additional vendor. Please contact the enaio helpdesk for assistance." & vbCrLF & Err.Number & " : " & Err.Description
+			Err.Clear
+		Else
+			getFieldByInternalName("bMultParties").Value = 1
+			asfile.ResultCode = 1
+			showLinkedParties
+		End If
+
+	End Sub
+
+' Multi-Party (Multi-Location) Functions --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Private Sub showLinkedParties() 'finds the basal FOLDER objects of all of this object's locations. Registers are ignored because they're not very informative.
+		Dim pathx, showIDs
+		Call getObjectPathEx(requestpages.Item(2).ID, VCTR.ObjTypeId, pathx)
+		Dim fArr : fArr = Split(pathx, "|")
+		For i = 0 To UBound(fArr)
+			showIDs = showIDs & Split(fArr(i), ";")(0) & ";"
+		Next
+		Application.OpenResultList showIDs, "Parteien " & Field("sContractNo")
+	End Sub
+
+	Private Function getTargetRegisterID(lFolID)
+		getTargetRegisterID = -1
+		Dim sConditions : sConditions = 1121 & D1 & "=" & D1 & lFolID & D2 & "sName" & D1 & "=" & D1 & sName
+		Dim regQry : regQry = application.StartRegRequest(template_clientQueryX(VREG.Archive, VREG.IntName, sConditions, 1, 0, 0, 0))
+		If Len(regQry) > 0 Then getTargetRegisterID = Split(regQry, ",")(0)
+	End Function
+
+	Private Function getTargetFolderID()
+		Dim oVendXML : Set oVendXML = CreateObject("MSXML2.DOMDocument.6.0")
+		Dim qryStr : qryStr = tmp_getResultList(VFOL, "sVendorName" & D1 & "lCreditorNumber", "", QRY_NOREMARKS)
+		qryStr = Replace(qryStr, "'sVendorName'/>", "'sVendorName' sortorder='ASC'/>")	'! sortorder defined on sVendorName
+		oVendXML.LoadXML(jobGetResultList(qryStr))
+		getTargetFolderID = xmlSelectAddon(oVendXML.SelectNodes("//Object"))
+		Set oVendorNodes = Nothing : Set oVendXML = Nothing
+	End Function
+
+	Private Function xmlSelectAddon(oNodeList)
+		Dim SPACER : SPACER = "                                        " 'tabs not supported (?)
+		Dim objList : Set objList = CreateObject("axaddxmltree.AsAddon")
+		If objList Is Nothing Then
+			msgbox "The library ""axaddxmltree.dll"" could not be initialized." & vbCrLf & "Please check your installation.", vbInformation+vbOKOnly+vbSystemModal, "enaio Error"
+			Exit Function
+		End If
+		Dim oNode, xmlStr : xmlStr = "<axaddxmltree returnsinglevalue='1' multiselect='0' withcheck='1' initaslist='0' selectlastnode='0' deselectwhencollapse='0' splitchar=';' gridlines='1'>"
+		For Each oNode In oNodeList
+			xmlStr = xmlStr & "<ebene selectable='1' returnvalue='" _
+				& oNode.attributes.getNamedItem("id").value & "' bold='0' forecolor='0' name='" _
+				& Left(oNode.SelectSingleNode("./Fields/Field[@internal_name='sVendorName']").text & SPACER, Len(SPACER)) & "Kreditor-Nr: " _
+				& oNode.SelectSingleNode("./Fields/Field[@internal_name='lCreditorNumber']").text _
+				& "' tooltip=''></ebene>"
+		Next
+		xmlStr = xmlStr & "</axaddxmltree>"
+		objList.Initmauspos
+		objList.initFromString xmlSelectAddon, xmlStr
+	End Function
+
+	Private Function tmpXmlCopy(TARGET_OBJ_DEF, lObjID, lFolID, lRegID, lRegTypeID)				'should be moved to gcs
+		If lRegID = -1 Then lRegTypeID = -1
+		tmpXmlCopy = "<DMSData>" _
+			& "<Archive internal_name='" & TARGET_OBJ_DEF.Archive & "'>" _
+				& "<ObjectType internal_name='" & TARGET_OBJ_DEF.IntName & "' type='" & TARGET_OBJ_DEF.ObjMainType & "'>" _
+					& "<Object object_id='" & lObjID & "' folder_id='" & lFolID & "' register_id='" & lRegID & "' register_type='" & lRegTypeID & "'/>" _
+				& "</ObjectType></Archive></DMSData>"
+	End Function
+
+' Attachments -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Private Function addNewAttachment()		'replace with std xmlInsert template
+		Dim sFields : sFields = "sContractNo" & D1 & Field("sContractNo") & D2 & "iAttachNo" & D1 & (getHighestAttachNo() + 1) & D2 & "sStatus" & D1 & CONTRACT_STATUS_DRAFT _
+			& D2 & "bConfidential" & D1 & Field("bConfidential") & D2 & "iVersion" & D1 & "1"
+		Dim xmlStr : xmlStr = tmp_xmlInsert(VATT, asfile.FolderID, VFOL, sFields)
+		addNewAttachment = jobXmlInsertX(xmlStr, "")
+	End Function
+
+	Private Function getHighestAttachNo()	'prev getHighestAttachNo
+
+		getHighestAttachNo = 0
+		Dim sConditions : sConditions = "sContractNo" & D1 & "=" & D1 & Field("sContractNo")
+		Dim sQry : sQry = template_clientQueryX(VATT.Archive, VATT.IntName, sConditions, iFields, iHeader, iWindow, iAutoStar)
+		Dim sResults : sResults = application.StartDocRequest(sQry)
+
+		Dim sChars, arrLines : arrLines = Split(sResults, vbNewLine)
+		Dim iCurAttachNo : iCurAttachNo = 0
+		For i = 0 To UBound(arrLines)
+			sChars = arrLines(i)
+			If arrLines(i) <> "" Then
+				iCurAttachNo = CInt(Split(arrLines(i), vbTab)(ATTACHNO_TABINDEX + 1)) '!this is probably (tab index of the field in the objDef) + 1. Don't forget to update it if it changes.
+				If iCurAttachNo > getHighestAttachNo Then getHighestAttachNo = iCurAttachNo
+			End If
+		Next
+
+	End Function
+
+' End Attachments -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+' Mail Contents ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Private Function mailText()
+		mailText = vbCrLf & "Dear Everyone," & vbCrLf & vbCrLf & " A new contract has been created " _
+			& "in the enaio Vendor/Customer cabinet, and assigned the number shown in the subject line." & vbCrLf & vbCrLf & vbCrLf _
+			& "This message was automatically generated by enaio " & Now & ". Please contact the enaio Helpdesk in case of questions or concerns."
+	End Function
+
+	Private Function qaMailText()
+		qaMailText = vbCrLf & "Hallo Zusammen," & vbCrLf & vbCrLf & " Eine neue oder angepasste Q-Agreement mit " _
+			& asfile.RequestPages.Item(0).ASFields.Item(CONTRACT_TABPOS_VENDORNAME).Value _
+			& " ist in enaio hochgeladen. Das Projektteam muss im Q-Agreement geschult werden. Dafür setzt sich bitte der (für den Kunden) zuständige " _
+			& " QA-Mitarbeiter mit dem zuständigen Projektleiter zur Organisation der Schulung des Q-Agreements in Verbindung." & vbCrLf _
+			& "Für inhaltliche Fragen zum Q-Agreement bitte Dirk Badura kontaktieren." & vbCrLf & vbCrLf & vbCrLf _
+			& "Diese Nachricht wurde automatisch von enaio am " & Now & " erzeugt. Bei Fragen oder Problemen, bitte die enaio Helpdesk kontaktieren."
+	End Function
+
+End Class
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+1091
+' VSL 20.Dec.2020 Vendors_Contract GlobalObjectTypeScript
+
+Const CONTRACT_LOCAL_REGISTER_NAME = "Contracts" 	'sName field of the register into which contracts are placed
+Const CONTRACT_BILLING_FREQS = "weekly|52|bi-weekly|26|monthly|12|quarterly|4|biennially|2|yearly|1"	'could be moved to valuelist but effort worth it?; "per-call" and "other" excluded as not quantifiable
+Const CONTRACT_STATUS_DRAFT = "draft"
+Const CONTRACT_STATUS_VALID = "active"
+Const CONTRACT_STATUS_INVALID = "inactive"
+Const CONTRACT_FIELDS_QAA_ONLY = "iRetainSamples|iRetainDocuments|iCustApprovalSamples|iCustApprovalData"
+
+Const CONTRACT_TABPOS_VENDORNAME = 0
+Const CONTRACT_TABPOS_VENDORTYPE = 3
+Const LISTVALUE_POS_USERNAME = 3
+Const LISTVALUE_POS_EMAIL = 7
+
+Const ATTACHNO_TABINDEX = 0
+
+Class ContractFunctions
+
+	Private Sub Class_Initialize()
+		init_Vendors_ObjDef
+	End Sub
+	
+	Sub contract_OnShow()
+		disableContractFields
+		asfile.ResultCode = 1
+	End Sub
+	
+	Sub contract_BeforeSave()	'TODO: in 9.1, this should now be assigned to AfterValidate
+		'When the user changes sStatus from "draft" to "active" for a Version 2 or higher document, set the status of the previous version to "inactive"
+		If asfile.EventAction = "UPDATE" Then
+			If Not IsNumeric(Field("iVersion")) Or Field("sStatus") <> CONTRACT_STATUS_VALID Then Exit Sub
+			If getDmsStatus(asfile.RequestPages(2).ID, VCTR.ObjTypeId) = CONTRACT_STATUS_DRAFT And CInt(Field("iVersion")) > 1 Then inactivatePriorVersion		'added condition (was urs req?)
+		End If
+		asfile.ResultCode = 1
+	End Sub
+	
+	Sub contract_AfterSave()
+		If asfile.EventAction = "NEW" Then notifyParties
+	End Sub
+	
+	Sub OnValueChanged_ContractType()
+		toggleFieldsByIntName CONTRACT_FIELDS_QAA_ONLY, (Field("sContractType") = "Quality Agreement")
+		asfile.ResultCode = 1
+	End Sub
+	
+' -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	Private Sub disableContractFields
+		
+		Dim DISABLE_UPDATE_EXCEPT_FOR : DISABLE_UPDATE_EXCEPT_FOR = "CONTRACTS_RESPONSIBLE|sPartyName|lPartyNo|sContractNo|iVersion|sContractType|sStatus"
+	
+		disableFieldUnlessEventIs "btnGetNumber|NEW"
+		disableFieldUnlessEventIs "btnNewAttachment|UPDATE"
+		disableFieldUnlessEventIs "btnShowAttachments|READONLY|UPDATE"
+		disableFieldUnlessEventIs "btnCopyThird|NEW|UPDATE"
+		disableFieldUnlessEventIs "btnX|NEW|UPDATE"
+		disableFieldUnlessEventIs "btnXX|NEW|UPDATE"
+
+		If asfile.EventAction = "NEW" Then
+			With getFieldByInternalName("sStatus")
+				.enabled = False
+				.Value = "draft"
+			End With
+			With getFieldByInternalName("iVersion")
+				.enabled = False
+				If Len(.Value) = 0 Then .Value = 0
+				.Value = .Value + 1
+			End With
+			
+			Dim oFolDetails : Set oFolDetails = CreateObject("MSXML2.DOMDocument.6.0")
+			oFolDetails.LoadXML(jobGetObjectDetails(asfile.FolderID, asfile.FolderType, ""))
+			With getFieldByInternalName("sPartyName")
+				.Value = oFolDetails.SelectSingleNode("//Field[@internal_name='sVendorName']").text
+				.enabled = False
+			End With
+			With getFieldByInternalName("lPartyNo")
+				.enabled = False
+				.Value = oFolDetails.SelectSingleNode("//Field[@internal_name='lCreditorNumber']").text
+			End With
+			Set oFolDetails = Nothing
+		End If
+		
+		If asfile.EventAction = "UPDATE" Then 
+			disableFieldsUnlessUserInGroup(DISABLE_UPDATE_EXCEPT_FOR)
+			If Field("sContractType") <> "Quality Agreement" Then disableFieldsCGAM CONTRACT_FIELDS_QAA_ONLY
+		End If
+		
+	End Sub
+	
+' Lifecycle (called in BeforeSave / AfterSave) --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	'TODO: 9.1 probably requires moving to AfterValidate
+	
+	Private Sub inactivatePriorVersion()
+		Dim lObjID : lObjID = getPriorVersionObjID()
+		If Len(lObjID) = 0 Then Exit Sub
+		If jobXmlUpdate(template_xmlUpdate(lObjID, VCTR.IntName, VCTR.Archive, "sStatus" & D1 & CONTRACT_STATUS_INVALID)) = 0 Then
+			msgbox "Sie haben den Vertrag 'aktiv' gesetzt. Dadurch wurde die Vorgängerversion 'inaktiv' geschaltet."
+		Else
+			msgbox "Achtung: die Vorgängerversion dieses Dokuments ist immer noch 'aktiv'; der Status konnte vom System nicht geändert werden." & vbCrlf & "Bitte kontaktieren sie ihr enaio Helpdesk."
+		End If
+	End Sub
+	
+	Private Function getPriorVersionObjID()
+		Dim sConditions : sConditions = "sContractNo" & D1 & "=" & D1 & Field("sContractNo") & D2 & "sStatus" & D1 & "=" & D1 & CONTRACT_STATUS_VALID
+		Dim qryStr : qryStr = template_clientQueryX(VCTR.Archive, VCTR.IntName, sConditions, 0, 0, 0, 0)
+		qryStr = getDocRequestIDs(qryStr)
+		If Len(qryStr) = 0 Then Exit Function
+		getPriorVersionObjID = Split(sStr, ",")(0)
+	End Function
+	
+	Private Function getDmsStatus(lObjID, lObjTypeID)	'there is a ClientEvent fxn on Application for this - see GD_BPL GCS / CF
+		Dim xmlDoc : Set xmlDoc = CreateObject("MSXML2.DOMDocument.6.0")
+		xmlDoc.LoadXML(jobGetObjectDetails(lObjID, lObjTypeID, ""))
+		getDmsStatus = xmlDoc.SelectSingleNode("//Field[@internal_name='sStatus']").Text
+		Set xmlDoc = Nothing
+	End Function
+	
+	Private Sub notifyParties()		'Notify the correct distribution list with the matching mail text based on Contract Type
+		Dim sNotifyListType, sMail : sMail = MAILTEXT 
+		
+		If Field("sContractType") = "Quality Agreement" And asfile.RequestPages.Item(0).ASFields.Item(CONTRACT_TABPOS_VENDORTYPE).Value = "Customer" Then
+			sNotifyListType = "QA_MailingList"	'For Q-Agreement with a Customer; in this case the non-standard mail text is used.
+			sMail = QAMAILTEXT
+		ElseIf Field("sContractType") = "Quality Agreement" Then
+			sNotifyListType = "QA_ProcessResponsible"	'For Q-Agreement with a Vendor, notify QA-Process-Responsibles
+		ElseIf InStr(1, D1 & listValues("ContractTypes", 2, "sField3" & D1 & "Quality") & D1, D1 & Field("sContractType") & D1) > 0 Then
+			Exit Sub	'For remaining Q-Relevant contract types, notify no one; exit sub.
+		Else
+			sNotifyListType = "Standard_ProcessResponsible"		'For all non-relevant contract types, notify the Process-Responsibles for standard contracts
+		End If
+		
+		Dim listUsers : listUsers = Replace(listValues("ContractsNotificationList", LISTVALUE_POS_USERNAME, "sField1" & D1 & sNotifyListType), D1, ";")
+		Dim listEmails : listEmails = Replace(listValues("ContractsNotificationList", LISTVALUE_POS_EMAIL, "sField1" & D1 & sNotifyListType), D1, ";")
+		
+		listUsers = appendString(listUsers, Field("sNotify"), ";", False) 'add the "notify additionally" users
+
+		If Len(listUsers) > 0 Then
+			Dim arrAdd : arrAdd = Split(listUsers, ";")
+			For j = 0 To UBound(arrAdd)
+				If arrAdd(j) <> "" And arrAdd(j) <> 0 Then
+					Dim sAddMail : sAddMail = getUserEmail(arrAdd(j))
+					If sAddMail <> "" Then listEmails = appendString(listEmails, sAddMail, ";", True)
+				End If
+			Next
+		End If
+		
+		Dim isNotified, arrParties : arrParties = Split(listEmails, ";") 'notify each e-mail address only once.
+		For i = 0 To UBound(arrParties)
+			If InStr(1, ";" & isNotified & ";", ";" & arrParties(i) & ";") = 0 Then
+				Call jobSendMail(arrParties(i), "osecm@carbogen-amcis.com", "New Contract in enaio - " & getFieldByInternalName("sContractNo").Value, sMail)	'absender
+				isNotified = isNotified & arrParties(i) & ";"
+			End If
+		Next
+	End Sub
+	
+' Buttons ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	' Sub btnNewVersion_Click()					'VSL 23.Dec.2020 - FeatureRequest HGL to circumvent the CopyObject behaviour, which seems to have changed in v9.1
+		
+		' Dim iVers : iVers = Field("iVersion")
+		' If IsNumeric(iVers) Then
+			' iVers = CInt(iVers) + 1
+		' Else
+			' iVers = 2
+		' End If
+		' Dim lNewObjectId : lNewObjectId = -1
+		
+		' If application.CopyObject(asfile.ActivePage.ID, asfile.ActivePage.ObjectType, asfile.FolderID, asfile.RegisterID, 1, lNewObjectId) <> 0 Or lNewObjectId < 1 Then
+			' msgbox application.GetLastError()
+			' asfile.ResultCode = -1 : Exit Sub
+		' End If
+		
+		' Dim strUpdate : strUpdate = "[AKTUALISIEREN]" & vbNewLine & "SCHRANK=%Vendors_Vendor%" & vbNewLine & "DOKUMENT=%Vendors_Contract%" & vbNewLine _
+			' & "DOKUMENT-ID=" & lNewObjectId & vbNewLine _
+			' & "FIELD1=%iVersion%=" & Right("00" & iVers, 2) & vbNewLine _
+			' & "FIELD2=%sStatus%=draft" & vbNewLine _
+			' & "Mode=1" & vbNewLine
+		
+		' If application.UpdateDocumentData(strUpdate) <> 0 Then
+			' msgbox application.GetLastError()
+			' asfile.ResultCode = -1 : Exit Sub
+		' End If
+
+		' 'IDs = asfile.ActivePage.ID & "," & asfile.ActivePage.ObjectType & ";" & lNewObjectId & "," & asfile.ActivePage.ObjectType
+		' 'Application.OpenResultList lNewObjectId & "," & asfile.ActivePage.ObjectType, "Neuer Vertrag " & Field("sContractNo") '
+		' btnShowRelatedDocuments_Click()
+		' Application.SetResultListSelection(lNewObjectId)
+		' 'Application.OpenDataDlg lNewObjectId, asfile.ActivePage.ObjectType, 1
+		' asfile.ResultCode = 1
+	
+	' End Sub
+	
+	Sub btnAddAttachment_Click()		' Add Attachment - the "Plus" Button
+		Dim iAttachObjID : iAttachObjID = addNewAttachment()
+		If iAttachObjID > 0 Then
+			Application.OpenResultList iAttachObjID & "," & VATT.ObjTypeId, "Neuer Anhang zu " & Field("sContractNo")
+			Application.OpenDataDlg iAttachObjID, VATT.ObjTypeId, 1
+		Else
+			msgbox "Error - a new attachment could not be created. Please contact your enaio team if the problem persists."
+		End If
+	End Sub
+	
+	Sub btnShowRelatedDocuments_Click()	' Show all related objects (Contracts and Attachments with matching number) in result list - the "A" button
+		Dim sConditions : sConditions = "sContractNo" & D1 & "=" & D1 & Field("sContractNo")
+		IDs = getDocRequestIDs(template_clientQueryX(VATT.Archive, VATT.IntName, sConditions, 0, 0, 0, 0))			'Attachments
+		IDs = IDs & getDocRequestIDs(template_clientQueryX(VCTR.Archive, VCTR.IntName, sConditions, 0, 0, 0, 0))		'Contracts
+		Application.OpenResultList IDs, "Verbundene Dokumente" 'IDs = ObjID_1,ObjTypeID_1;ObjID_N,ObjTypeID_N;
+	End Sub
+	
+	Sub btnX_Click()	'Calculate contract end date from start date and duration	-	the "X" button
+		Dim dStart : dStart = Field("dStartDate")
+		Dim iDuration : iDuration = Field("iDuration")
+
+		Dim sMsg'Check for acceptable conditions
+		If Len(dStart) = 0 Then sMsg = sMsg & "You need to enter a start date!" & vbCrLF
+		If Len(iDuration) = 0 Then sMsg = sMsg & "You need to enter a duration!" & vbCrLF
+		
+		If sMsg <> "" Then msgbox sMsg : Exit Sub
+		Dim dNewDate : dNewDate = DateSerial(Right(dStart, 4), Mid(dStart, 4, 2), Left(dStart, 2))
+		getFieldByInternalName("dEndDate").Value = DateAdd("yyyy", iDuration, dNewDate)
+		asfile.ResultCode = 1
+	End Sub
+	
+	' Generates a new Contract Number using the counter (GUID: VENDORS_CONTRACT) and the prefix of the contract type; 
+	' Version is always assigned '01'. The counter value is incremented by one for historical reasons; best not change that.
+	Sub btnN_Click()	
+						'TODO: get rid of this mechanism alltogether and asign number in aftervalidate
+		Dim sMsg, sType : sType = Field("sContractType")
+		If Len(sType) = 0 Then	'Check for appropriate conditions - check if a Contract Type has been defined
+			msgbox "Sie müssen zuerst einen Vertragstyp festlegen."	
+			asfile.ResultCode = -1	'confirm
+			Exit Sub
+		End If
+		
+		Dim lMaxNo : lMaxNo = jobGetCounter(VCTR.IntName, 0, 10000, False)
+		Dim sPrefix : sPrefix  = listValues("ContractTypes", 3, "sField1" & D1 & sType)
+		If sPrefix = "" Then sPrefix = "SO"											'TODO: VSL - is this behaviour still wanted? (Sonstige : SO)
+		getFieldByInternalName("sContractNo").Value = sPrefix & "-" & lMaxNo + 1
+		asfile.ResultCode = 1
+	End Sub
+	
+	Sub btnXX_Click()		'fills the 'Cost per Year' field if a billing freq. and cost have been provided 	-	the "XX" button 
+		
+		Dim lCost : lCost = Field("lCost")
+		Dim sMsg, sFreq : sFreq = Field("sBillingFreq")
+		
+		'Check for acceptable conditions.
+		If Len(lCost) = 0 Or Not IsNumeric(lCost) Then sMsg = sMsg & "Error: 'Cost' is not valid." & vbCrLF
+		If Len(sFreq) = 0 Then sMsg = sMsg & "Error: you must select a billing frequency to use the calculator!" & vbCrLF
+		If InStr(1, "|" & CONTRACT_BILLING_FREQS & "|", "|" & sFreq & "|") = 0 And Len(sFreq) > 0 Then sMsg = sMsg & "Error: calculation is not supported for billing frequency '" & sFreq & "'."
+
+		If sMsg <> "" Then msgbox sMsg : asfile.ResultCode = 0 : Exit Sub
+		
+		Dim i, sFreqArr : sFreqArr = Split(CONTRACT_BILLING_FREQS, "|")
+		For i = 1 To UBound(sFreqArr) Step 2
+			If sFreqArr(i) = sFreq Then getFieldByInternalName("lCostPerYear").Value = lCost * CInt(sFreqArr(i + 1)) : Exit For
+		Next
+		asfile.ResultCode = 1
+	End Sub
+	
+	Sub btnMP_Click()		'copies this contract object to an additional Vendor/Customer folder (third party)	-	the "MP" button
+		
+		asfile.ResultCode = 0
+		If asfile.EventAction = "NEW" Then msgbox "Bitte erst den Vertrag vervollständigen und speichern, dann erneut im Bearbeitungsmodus öffnen, um zu einer weiteren Partei zu kopieren." : Exit Sub
+
+		Dim lTargetFolderID : lTargetFolderID = getTargetFolderID()
+		If Len(lTargetFolderID) = 0 Then Exit Sub	'cancelled or user failed to make a selection
+		
+		Dim lTargetRegisterID : lTargetRegisterID = getTargetRegisterID(lTargetFolderID)
+		Dim sCopyXml : sCopyXml = tmpXmlCopy(VCTR, requestpages.Item(2).ID, lTargetFolderID, lTargetRegisterID, VREG.ObjTypeId)	'RequestPages.ActivePage.ID should be fine here
+		
+		On Error Resume Next
+		Call jobXmlCopy(sCopyXml, "LINKDOCUMENT=1")
+		If Err.Number <> 0 Then
+			msgbox "Error linking contract to additional vendor. Please contact the enaio helpdesk for assistance." & vbCrLF & Err.Number & " : " & Err.Description
+			Err.Clear
+		Else
+			getFieldByInternalName("bMultParties").Value = 1
+			asfile.ResultCode = 1
+			showLinkedParties
+		End If
+		
+	End Sub
+	
+' Multi-Party (Multi-Location) Functions --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Private Sub showLinkedParties() 'finds the basal FOLDER objects of all of this object's locations. Registers are ignored because they're not very informative.
+		Dim pathx, showIDs
+		Call getObjectPathEx(requestpages.Item(2).ID, VCTR.ObjTypeId, pathx)
+		Dim fArr : fArr = Split(pathx, "|")
+		For i = 0 To UBound(fArr)
+			showIDs = showIDs & Split(fArr(i), ";")(0) & ";"
+		Next
+		Application.OpenResultList showIDs, "Parteien " & Field("sContractNo")
+	End Sub
+
+	Private Function getTargetRegisterID(lFolID)
+		getTargetRegisterID = -1
+		Dim sConditions : sConditions = 1121 & D1 & "=" & D1 & lFolID & D2 & "sName" & D1 & "=" & D1 & sName
+		Dim regQry : regQry = application.StartRegRequest(template_clientQueryX(VREG.Archive, VREG.IntName, sConditions, 1, 0, 0, 0))
+		If Len(regQry) > 0 Then getTargetRegisterID = Split(regQry, ",")(0)
+	End Function
+
+	Private Function getTargetFolderID()
+		Dim oVendXML : Set oVendXML = CreateObject("MSXML2.DOMDocument.6.0")
+		Dim qryStr : qryStr = tmp_getResultList(VFOL, "sVendorName" & D1 & "lCreditorNumber", "", QRY_NOREMARKS)
+		qryStr = Replace(qryStr, "'sVendorName'/>", "'sVendorName' sortorder='ASC'/>")	'! sortorder defined on sVendorName
+		oVendXML.LoadXML(jobGetResultList(qryStr))
+		getTargetFolderID = xmlSelectAddon(oVendXML.SelectNodes("//Object"))
+		Set oVendorNodes = Nothing : Set oVendXML = Nothing
+	End Function
+
+	Private Function xmlSelectAddon(oNodeList)
+		Dim SPACER : SPACER = "                                        " 'tabs not supported (?)
+		Dim objList : Set objList = CreateObject("axaddxmltree.AsAddon")
+		If objList Is Nothing Then
+			msgbox "The library ""axaddxmltree.dll"" could not be initialized." & vbCrLf & "Please check your installation.", vbInformation+vbOKOnly+vbSystemModal, "enaio Error"
+			Exit Function
+		End If
+		Dim oNode, xmlStr : xmlStr = "<axaddxmltree returnsinglevalue='1' multiselect='0' withcheck='1' initaslist='0' selectlastnode='0' deselectwhencollapse='0' splitchar=';' gridlines='1'>"
+		For Each oNode In oNodeList
+			xmlStr = xmlStr & "<ebene selectable='1' returnvalue='" _
+				& oNode.attributes.getNamedItem("id").value & "' bold='0' forecolor='0' name='" _
+				& Left(oNode.SelectSingleNode("./Fields/Field[@internal_name='sVendorName']").text & SPACER, Len(SPACER)) & "Kreditor-Nr: " _
+				& oNode.SelectSingleNode("./Fields/Field[@internal_name='lCreditorNumber']").text _
+				& "' tooltip=''></ebene>"
+		Next
+		xmlStr = xmlStr & "</axaddxmltree>"
+		objList.Initmauspos
+		objList.initFromString xmlSelectAddon, xmlStr
+	End Function
+	
+	Private Function tmpXmlCopy(TARGET_OBJ_DEF, lObjID, lFolID, lRegID, lRegTypeID)				'should be moved to gcs
+		If lRegID = -1 Then lRegTypeID = -1
+		tmpXmlCopy = "<DMSData>" _
+			& "<Archive internal_name='" & TARGET_OBJ_DEF.Archive & "'>" _
+				& "<ObjectType internal_name='" & TARGET_OBJ_DEF.IntName & "' type='" & TARGET_OBJ_DEF.ObjMainType & "'>" _
+					& "<Object object_id='" & lObjID & "' folder_id='" & lFolID & "' register_id='" & lRegID & "' register_type='" & lRegTypeID & "'/>" _
+				& "</ObjectType></Archive></DMSData>"
+	End Function
+
+' Attachments -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	Private Function addNewAttachment()		'replace with std xmlInsert template
+		Dim sFields : sFields = "sContractNo" & D1 & Field("sContractNo") & D2 & "iAttachNo" & D1 & (getHighestAttachNo() + 1) & D2 & "sStatus" & D1 & CONTRACT_STATUS_DRAFT _
+			& D2 & "bConfidential" & D1 & Field("bConfidential") & D2 & "iVersion" & D1 & "1"
+		Dim xmlStr : xmlStr = tmp_xmlInsert(VATT, asfile.FolderID, VFOL, sFields)
+		addNewAttachment = jobXmlInsertX(xmlStr, "")
+	End Function
+	
+	Private Function getHighestAttachNo()	'prev getHighestAttachNo
+	
+		getHighestAttachNo = 0
+		Dim sConditions : sConditions = "sContractNo" & D1 & "=" & D1 & Field("sContractNo")
+		Dim sQry : sQry = template_clientQueryX(VATT.Archive, VATT.IntName, sConditions, iFields, iHeader, iWindow, iAutoStar)
+		Dim sResults : sResults = application.StartDocRequest(sQry)
+		
+		Dim sChars, arrLines : arrLines = Split(sResults, vbNewLine)
+		Dim iCurAttachNo : iCurAttachNo = 0
+		For i = 0 To UBound(arrLines)
+			sChars = arrLines(i)
+			If arrLines(i) <> "" Then
+				iCurAttachNo = CInt(Split(arrLines(i), vbTab)(ATTACHNO_TABINDEX + 1)) '!this is probably (tab index of the field in the objDef) + 1. Don't forget to update it if it changes.
+				If iCurAttachNo > getHighestAttachNo Then getHighestAttachNo = iCurAttachNo
+			End If
+		Next
+		
+	End Function
+	
+' End Attachments -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+' Mail Contents ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	Private Function mailText()
+		mailText = vbCrLf & "Dear Everyone," & vbCrLf & vbCrLf & " A new contract has been created " _
+			& "in the enaio Vendor/Customer cabinet, and assigned the number shown in the subject line." & vbCrLf & vbCrLf & vbCrLf _
+			& "This message was automatically generated by enaio " & Now & ". Please contact the enaio Helpdesk in case of questions or concerns."
+	End Function
+
+	Private Function qaMailText()
+		qaMailText = vbCrLf & "Hallo Zusammen," & vbCrLf & vbCrLf & " Eine neue oder angepasste Q-Agreement mit " _
+			& asfile.RequestPages.Item(0).ASFields.Item(CONTRACT_TABPOS_VENDORNAME).Value _
+			& " ist in enaio hochgeladen. Das Projektteam muss im Q-Agreement geschult werden. Dafür setzt sich bitte der (für den Kunden) zuständige " _
+			& " QA-Mitarbeiter mit dem zuständigen Projektleiter zur Organisation der Schulung des Q-Agreements in Verbindung." & vbCrLf _
+			& "Für inhaltliche Fragen zum Q-Agreement bitte Dirk Badura kontaktieren." & vbCrLf & vbCrLf & vbCrLf _
+			& "Diese Nachricht wurde automatisch von enaio am " & Now & " erzeugt. Bei Fragen oder Problemen, bitte die enaio Helpdesk kontaktieren."
+	End Function
+	
+End Class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
